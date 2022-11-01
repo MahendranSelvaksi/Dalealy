@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dalealy</string>
+
+    <!--Sign up page -->
+    <string name="name_label">الاسم</string>
+    <string name="student_number_label">رقم الطالب في النظام</string>
+    <string name="school_name_label">اسم المدرسة</string>
+    <string name="educational_path_label">المسار التعليمي</string>
+    <string name="class_label">الصف</string>
+    <string name="email_id_label">رقم التواصل</string>
+    <string name="contact_number_label">رقم التواصل</string>
+    <string name="identification_number_label">رقم الهوية</string>
+    <string name="date_of_birth_label">تاريخ الميلاد</string>
+    <string name="interests_label">الهوايات</string>
+    <string name="emirate_id_label">الامارة</string>
+    <string name="residential_area_label">منطقة السكن</string>
+    <string name="student_grade_label">درجة الطالب الحالية في أخر فصل دراسي في المواد التالية :</string>
+    <string name="arabic_label">اللغة العربية</string>
+    <string name="english_label">اللغة الإنجليزية</string>
+    <string name="maths_label">الرياضيات</string>
+    <string name="chemistry_label">الكيمياء</string>
+    <string name="physics_label">الفيزياء</string>
+    <string name="biology_label">الأحياء</string>
+    <string name="password_label">كلمة المرور</string>
+    <string name="confirm_password_label">تأكيد كلمة المرور</string>
+    <string name="signup_label">اشتراك</string>
+    <string name="login_label">تسجيل الدخول</string>
+    <string name="new_user_label">طالب جديد</string>
+    <string name="phone_language">English</string>
+    <string-array name="school_name_array">
+        <item>School 1</item>
+        <item>School 2</item>
+        <item>School 3</item>
+        <item>School 4</item>
+        <item>School 5</item>
+        <item>School 6</item>
+    </string-array>
+
+    <string-array name="intrest_array">
+        <item>سباحة</item>
+        <item>قراءة</item>
+        <item>العب العاب الفيديو</item>
+        <item>التصوير</item>
+    </string-array>
+
+    <string-array name="grade_array">
+        <item>أ</item>
+        <item>أ +</item>
+        <item>ب</item>
+        <item>ب +</item>
+        <item>ج</item>
+        <item>ج +</item>
+        <item>د</item>
+        <item>د +</item>
+        <item>F</item>
+    </string-array>
+
+    <string-array name="evaluation_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="class_array">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+</resources>

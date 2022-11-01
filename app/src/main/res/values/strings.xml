@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Dalealy</string>
+
+    <!--Sign up page -->
+    <string name="name_label">Name</string>
+    <string name="student_number_label">Student number in the system</string>
+    <string name="school_name_label">School name</string>
+    <string name="educational_path_label">Educational path</string>
+    <string name="class_label">Class</string>
+    <string name="email_id_label">Email ID</string>
+    <string name="contact_number_label">Contact number</string>
+    <string name="identification_number_label">Identification number</string>
+    <string name="date_of_birth_label">Date of Birth</string>
+    <string name="interests_label">Interests</string>
+    <string name="emirate_id_label">Emirate ID</string>
+    <string name="residential_area_label">Residential area</string>
+    <string name="student_grade_label">The student\'s current grade in the last semester in the following subjects:</string>
+    <string name="arabic_label">Arabic</string>
+    <string name="english_label">English</string>
+    <string name="maths_label">Maths</string>
+    <string name="chemistry_label">Chemistry</string>
+    <string name="physics_label">Physics</string>
+    <string name="biology_label">Biology</string>
+    <string name="password_label">Password</string>
+    <string name="confirm_password_label">Confirm Password</string>
+    <string name="signup_label">Signup</string>
+    <string name="login_label">Login</string>
+    <string name="new_user_label">New Student</string>
+    <string name="phone_language">English</string>
+
+    <string-array name="school_name_array">
+        <item>School 1</item>
+        <item>School 2</item>
+        <item>School 3</item>
+        <item>School 4</item>
+        <item>School 5</item>
+        <item>School 6</item>
+    </string-array>
+
+    <string-array name="intrest_array">
+        <item>swimming</item>
+        <item>reading</item>
+        <item>playing video games</item>
+        <item>photography</item>
+    </string-array>
+
+    <string-array name="grade_array">
+        <item>A</item>
+        <item>A+</item>
+        <item>B</item>
+        <item>B+</item>
+        <item>C</item>
+        <item>C+</item>
+        <item>D</item>
+        <item>D+</item>
+        <item>F</item>
+    </string-array>
+
+    <string-array name="evaluation_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="class_array">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+</resources>
