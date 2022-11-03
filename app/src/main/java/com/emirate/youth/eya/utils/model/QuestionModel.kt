@@ -13,4 +13,5 @@ data class QuestionModel(
     var ques_desc:String="",
     var ques_ex_ar:String="",
     var ques_ex:String="",
+    var given_answer:String=""
 )

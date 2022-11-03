@@ -32,7 +32,6 @@ class LoginActivity : BaseActivity() {
     private val passwordET: TextInputEditText by lazy { findViewById(R.id.passwordET) }
     private val txt_signup: TextView by lazy { findViewById(R.id.txt_signup) }
     private val btn_login: Button by lazy { findViewById(R.id.btn_login) }
-    private val switchOnOff: androidx.appcompat.widget.SwitchCompat by lazy { findViewById(R.id.switchOnOff) }
 
     val smileyRemover = SmileyRemover()
 
@@ -54,7 +53,7 @@ class LoginActivity : BaseActivity() {
             if (it.toString().isNotEmpty() || it.toString().length >= 15)
                 emirateIdTIL.error = null
             else if (it.toString().length < 15)
-                emirateIdTIL.error = "Please fill valid Emirate Id"
+                emirateIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
         }
 
         passwordET.doAfterTextChanged {
@@ -62,41 +61,23 @@ class LoginActivity : BaseActivity() {
                 passwordTIL.error = null
         }
 
-        switchOnOff.setOnClickListener {
-            //LocaleManagerMew.setLocale(this@LoginCustomerFragment.activity?.applicationContext)
-            var mCurrentLanguage =
-                LocaleManagerMew.getCurrentLanguage(this@LoginActivity.applicationContext!!.applicationContext)
-            if (mCurrentLanguage == LocaleManagerMew.mArabicFlag) {
-                LocaleManagerMew.setNewLocale(
-                    this@LoginActivity.applicationContext!!,
-                    LocaleManagerMew.mEnglishFlag
-                )
-            } else if (mCurrentLanguage == LocaleManagerMew.mEnglishFlag) {
-                LocaleManagerMew.setNewLocale(
-                    this@LoginActivity.applicationContext!!,
-                    LocaleManagerMew.mArabicFlag
-                )
-            }
-            this.recreate()
-        }
-
         btn_login.setOnClickListener {
             if (emirateIdET.text.toString().isEmpty() && passwordET.text.toString().isEmpty()) {
-                emirateIdTIL.error = "Please fill Emirate Id"
-                passwordTIL.error = "Please fill Password"
+                emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
+                passwordTIL.error = resources.getString(R.string.fill_password)
             } else if (emirateIdET.text.toString().isEmpty() || passwordET.text.toString()
                     .isEmpty()
             ) {
                 if (emirateIdET.text.toString().isEmpty()) {
-                    emirateIdTIL.error = "Please fill Emirate Id"
+                    emirateIdTIL.error =  resources.getString(R.string.fill_emirate_id)
                 }
                 if (passwordET.text.toString().isEmpty()) {
-                    passwordTIL.error = "Please fill Password"
+                    passwordTIL.error = resources.getString(R.string.fill_password)
                 }
             } /*else if (emirateIdET.text.toString().length < 15) {
                 emirateIdTIL.error = "Please fill valid Emirate Id"
             } */ else {
-                showProgress("Login progress, Please wait...")
+                showProgress(resources.getString(R.string.login_progress))
                 val request = ServiceBuilder.buildService(ApiInterface::class.java)
                 val call = request.login(emirateIdET.text.toString(), passwordET.text.toString())
                 call.enqueue(object : retrofit2.Callback<ResponseBody> {
@@ -120,8 +101,8 @@ class LoginActivity : BaseActivity() {
                                     AppConstant.LOGIN_SESSION_USER_ID,emirateIdET.text.toString())
                                 callRegisterActivity()
                             } else {
-                                emirateIdTIL.error = "Please fill valid Emirate Id"
-                                passwordTIL.error = "Please fill valid Password"
+                                emirateIdTIL.error =  resources.getString(R.string.fill_valid_emirate_id)
+                                passwordTIL.error =  resources.getString(R.string.fill_valid_password)
                             }
                         }
                     }

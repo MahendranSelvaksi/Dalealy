@@ -1,12 +1,15 @@
 package com.emirate.youth.eya.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 
+@SuppressLint("StaticFieldLeak")
 object SessionManager{
     private lateinit var mContext: Context
     lateinit var appConstants: AppConstant
 
+    @SuppressLint("StaticFieldLeak")
     fun SessionManager(context: Context) {
         mContext = context
         appConstants= AppConstant

@@ -6,17 +6,16 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
-        android:name=".utils.App"
+        android:name=".utils.AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_new"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_new_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EYA">
         <activity
-            android:name=".LocaleChangeActivity"
+            android:name=".question.ImageShownActivity"
             android:exported="false" />
         <activity
             android:name=".question.QuestionActivity"
@@ -24,11 +23,9 @@
         <activity
             android:name=".question.Question2Activity"
             android:exported="false" />
-
         <activity
             android:name=".question.Question3Activity"
             android:exported="false" />
-
         <activity
             android:name=".question.Question4Activity"
             android:exported="false" />

@@ -15,13 +15,6 @@
         android:gravity="center"
         android:orientation="vertical"
         android:weightSum="10">
-        <include
-            layout="@layout/language_change_ui"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_gravity="right"
-            android:gravity="right"/>
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"

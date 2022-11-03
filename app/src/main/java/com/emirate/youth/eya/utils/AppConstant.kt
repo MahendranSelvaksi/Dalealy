@@ -11,6 +11,10 @@ object AppConstant {
 
     val NoInternet="Internet connection is required!"
 
+    val LANGUAGE_ENGLISH:String="en"
+    val LANGUAGE_ARABIC:String="ar"
+    val LANGUAGE_KEY:String="language_key"
+
 
     fun isAtLeastVersion(version: Int): Boolean {
         return Build.VERSION.SDK_INT >= version

@@ -10,6 +10,7 @@
     app:cardElevation="1dp"
     app:cardMaxElevation="5dp"
     app:cardPreventCornerOverlap="true"
+    android:id="@+id/cardView"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -46,26 +47,53 @@
             android:layout_gravity="start"
             android:gravity="start"
             android:layout_margin="3dp"
-            android:textColor="@color/teal_200"
+            android:textColor="@color/teal_700"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:text="Example: Note spelling errors quickly from the first glance of the report" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+
+        <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Please Select">
-
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/answerSpinner"
-                android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="start"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:focusableInTouchMode="false"
-                android:focusable="false"
-                tools:ignore="MissingClass" />
+                android:text="1"
+                android:buttonTint="@color/rb_tint_color"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:buttonTint="@color/rb_tint_color"/>
+
+            <RadioButton
+                android:id="@+id/rb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:buttonTint="@color/rb_tint_color"/>
+
+            <RadioButton
+                android:id="@+id/rb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:buttonTint="@color/rb_tint_color"/>
+
+            <RadioButton
+                android:id="@+id/rb5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:buttonTint="@color/rb_tint_color"/>
+        </RadioGroup>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

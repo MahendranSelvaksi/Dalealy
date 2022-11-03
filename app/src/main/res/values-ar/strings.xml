@@ -2,7 +2,17 @@
 <resources>
     <string name="app_name">Dalealy</string>
 
+
+    <!--Login Page-->
+    <string name="LoginTitle">تسجيل الدخول</string>
+    <string name="fill_emirate_id">يرجى تعبئة رقم الهوية الإماراتي</string>
+    <string name="fill_valid_emirate_id">يرجى ملء رقم الهوية الإماراتي ساري المفعول</string>
+    <string name="fill_password">الرجاء إدخال كلمة المرور</string>
+    <string name="fill_valid_password">الرجاء إدخال كلمة مرور صالحة</string>
+    <string name="login_progress">تقدم تسجيل الدخول ، يرجى الانتظار …</string>
+
     <!--Sign up page -->
+    <string name="Signup">اشتراك</string>
     <string name="name_label">الاسم</string>
     <string name="student_number_label">رقم الطالب في النظام</string>
     <string name="school_name_label">اسم المدرسة</string>
@@ -74,4 +84,82 @@
         <item>11</item>
         <item>12</item>
     </string-array>
+
+    <string name="fill_name">الرجاء تعبئة الاسم</string>
+    <string name="fill_student_number">الرجاء تعبئة رقم الطالب</string>
+    <string name="fill_schl_name">الرجاء تحديد اسم المدرسة</string>
+    <string name="fill_edu_path">الرجاء تعبئة المسار التعليمي</string>
+    <string name="select_class">الرجاء تحديد فئة</string>
+    <string name="fill_email_id">يرجى ملء معرف البريد الإلكتروني</string>
+    <string name="fill_contact_num">يرجى ملء رقم الاتصال</string>
+    <string name="fill_identifiction_num">الرجاء تعبئة رقم التعريف</string>
+    <string name="fill_dob">يرجى ملء تاريخ الميلاد</string>
+    <string name="fill_interest">يرجى ملء الفائدة</string>
+    <string name="fill_residential_area">يرجى ملء المنطقة السكنية</string>
+    <string name="select_arabic">الرجاء اختيار العربية</string>
+    <string name="select_english">الرجاء تحديد اللغة الإنجليزية</string>
+    <string name="select_maths">الرجاء اختيار الرياضيات</string>
+    <string name="select_chemistry">يرجى تحديد الكيمياء</string>
+    <string name="select_physics">الرجاء اختيار الفيزياء</string>
+    <string name="select_biology">يرجى تحديد علم الأحياء</string>
+    <string name="fill_confirm_password">يرجى ملء تأكيد كلمة المرور</string>
+    <string name="fill_valid_confirm_password">الرجاء إدخال نفس كلمة المرور</string>
+
+    <string name="valid_email_id">يرجى ملء معرف بريد إلكتروني صالح</string>
+
+
+    <string name="signup_progress">تقدم التسجيل ، يرجى الانتظار …</string>
+
+
+    <!--    Common strings-->
+
+    <string name="Yes">نعم</string>
+    <string name="No">رقم</string>
+    <string name="alert">انذار</string>
+    <string name="alert_msg">هل قمت بتسجيل الخروج من التطبيق؟</string>
+    <string name="lang_msg">هل قمت بتغيير اللغة إلى اللغة الإنجليزية؟</string>
+    <string name="exit_msg">هل خرجت من النموذج؟</string>
+
+    <string name="submit">يُقدِّم</string>
+
+    <!--Dash Board page-->
+    <string name="dash_board">لوحة القيادة</string>
+    <string name="dash_board_caption">بنك المهارات الإبداعية (101 مهارات)</string>
+    <string name="next">التالي</string>
+
+    <string name="very_week">ضعيف جدا</string>
+    <string name="very_week_skill">المهارة ظاهرة بشكل بسيط ونادر  </string>
+    <string name="very_week_ex">الدقة: غير دقيق في معظم أعمالي وأجد الأخطاء غالبا بعد الإنجاز </string>
+
+    <string name="week">ضعيف</string>
+    <string name="week_skill">المهارة ظاهرة  ولكنها  دون المتوسط </string>
+    <string name="week_ex">الدقة : في بعض الأشياء الهامة أحاول أن أكون دقيقا وفعلا أصل للدقة </string>
+
+    <string name="moderate">معتدل</string>
+    <string name="moderate_skill">المهارة ظاهرة  بشكل متوسط </string>
+    <string name="moderate_ex">الدقة : أكون دقيق في الأمور الهامة وغير دقيق في بقية الأمور </string>
+
+    <string name="strong">قوي</string>
+    <string name="strong_skill">المهارة ظاهرة بشكل واضح </string>
+    <string name="strong_ex">الدقة : أكون دقيق في معظم أمور حياتي الشخصية والعملية بدون تعب </string>
+
+    <string name="very_capable">متمكن جدا </string>
+    <string name="very_capable_skill">المهارة ظاهرة بشكل مؤكد ومرتفع جدا</string>
+    <string name="very_capable_ex">الدقة : أكون دقيق جدا في جميع تفاصيل  حياتي  وعملي تلقائيا  واستمتع بها </string>
+
+    <string name="fill_all_questions">الرجاء الإجابة على جميع الأسئلة)</string>
+    <string name="success">النجاح</string>
+    <string name="questions_title">أسئلة</string>
+    <string name="ok">نعم</string>
+    <string name="congrats"> مبروك ، لقد حققت </string>
+    <string name="question_data_load_msg">جاري تحميل بيانات السؤال ، يرجى الانتظار …</string>
+    <string name="upto_mark_msg">Yأنت لا تصل إلى 60 علامة. الرجاء الإجابة على أسئلة الفئة التالية.</string>
+
+
+    <string name="ke_title">تمديد المعرفة</string>
+
+    <string name="leader_name_cat_1">أنت الآن مؤهل للاستراتيجية (القائد حسب الأهداف)</string>
+    <string name="leader_name_cat_2">أنت الآن مؤهل للمنظم (القائد التنفيذي)</string>
+    <string name="leader_name_cat_3">أنت الآن مؤهل لـ عاطفي (القائد بالحب)</string>
+    <string name="leader_name_cat_4">أنت الآن مؤهل للحصول على مغامر (القائد مع الإلهام)</string>
 </resources>

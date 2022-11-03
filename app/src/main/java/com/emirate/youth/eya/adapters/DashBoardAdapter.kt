@@ -1,5 +1,6 @@
 package com.emirate.youth.eya.adapters
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.emirate.youth.eya.R
 
-class DashBoardAdapter(var mListener: NavigateListerner) :
+class DashBoardAdapter(var mListener: NavigateListerner,var mContext: Activity) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private fun getLayoutInflater(parent: ViewGroup, layout: Int): View {
@@ -34,34 +35,34 @@ class DashBoardAdapter(var mListener: NavigateListerner) :
         if (holder is DashboardHolder) {
             when (position) {
                 0 -> {
-                    holder.evaluationTV.text = "Very weak"
-                    holder.skillTV.text = "The skill is simple and rare"
+                    holder.evaluationTV.text = mContext.resources.getString(R.string.very_week)
+                    holder.skillTV.text =  mContext.resources.getString(R.string.very_week_skill)
                     holder.ratingTV.text = "1"
-                    holder.exampleTV.text = "Accuracy: Inaccurate in most of my work and I often find errors after completion"
+                    holder.exampleTV.text = mContext.resources.getString(R.string.very_week_ex)
                 }
                 1 -> {
-                    holder.evaluationTV.text = " weak"
-                    holder.skillTV.text = "The skill is apparent but below average"
+                    holder.evaluationTV.text =  mContext.resources.getString(R.string.week)
+                    holder.skillTV.text =mContext.resources.getString(R.string.week_skill)
                     holder.ratingTV.text = "2"
-                    holder.exampleTV.text = "Accuracy: On some important things, I try to be accurate and really get accurate"
+                    holder.exampleTV.text = mContext.resources.getString(R.string.week_ex)
                 }
                 2 -> {
-                    holder.evaluationTV.text = "Moderate"
-                    holder.skillTV.text = "The skill is shown on average"
+                    holder.evaluationTV.text = mContext.resources.getString(R.string.moderate)
+                    holder.skillTV.text =  mContext.resources.getString(R.string.moderate_skill)
                     holder.ratingTV.text = "3"
-                    holder.exampleTV.text = "Accuracy: I am accurate in important matters and inaccurate in other matters"
+                    holder.exampleTV.text =  mContext.resources.getString(R.string.moderate_ex)
                 }
                 3 -> {
-                    holder.evaluationTV.text = "strong"
-                    holder.skillTV.text = "The skill is clearly visible"
+                    holder.evaluationTV.text =  mContext.resources.getString(R.string.strong)
+                    holder.skillTV.text =  mContext.resources.getString(R.string.strong_skill)
                     holder.ratingTV.text = "4"
-                    holder.exampleTV.text = "Accuracy: I am accurate in most matters of my personal and professional life without getting tired"
+                    holder.exampleTV.text =  mContext.resources.getString(R.string.strong_ex)
                 }
                 4 -> {
-                    holder.evaluationTV.text = "very capable"
-                    holder.skillTV.text = "The skill is definitely visible and very high"
+                    holder.evaluationTV.text =  mContext.resources.getString(R.string.very_capable)
+                    holder.skillTV.text = mContext.resources.getString(R.string.very_capable_skill)
                     holder.ratingTV.text = "5"
-                    holder.exampleTV.text = "Accuracy: I am very accurate in all the details of my life and work automatically and I enjoy it"
+                    holder.exampleTV.text = mContext.resources.getString(R.string.very_capable_ex)
                 }
             }
 

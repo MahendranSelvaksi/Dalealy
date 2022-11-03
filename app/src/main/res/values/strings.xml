@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Dalealy</string>
 
+    <!--Login Page-->
+    <string name="LoginTitle">Login</string>
+    <string name="fill_emirate_id">Please fill Emirate Id</string>
+    <string name="fill_valid_emirate_id">Please fill valid Emirate Id</string>
+    <string name="fill_password">Please fill Password</string>
+    <string name="fill_valid_password">Please fill valid Password</string>
+    <string name="login_progress">Login progress, Please wait…</string>
+
     <!--Sign up page -->
     <string name="name_label">Name</string>
     <string name="student_number_label">Student number in the system</string>
@@ -74,5 +82,88 @@
         <item>11</item>
         <item>12</item>
     </string-array>
+
+
+    <string name="Signup">Sign up</string>
+    <string name="fill_name">Please fill name</string>
+    <string name="fill_student_number">Please fill Student number</string>
+    <string name="fill_schl_name">Please select School name</string>
+    <string name="fill_edu_path">Please fill Educational Path</string>
+    <string name="select_class">Please select Class</string>
+    <string name="fill_email_id">Please fill Email ID</string>
+    <string name="fill_contact_num">Please fill Contact Number</string>
+    <string name="fill_identifiction_num">Please fill Identification Number</string>
+    <string name="fill_dob">Please fill Date of Birth</string>
+    <string name="fill_interest">Please fill Interest</string>
+    <string name="fill_residential_area">Please fill Residential Area</string>
+    <string name="select_arabic">Please select Arabic</string>
+    <string name="select_english">Please select English</string>
+    <string name="select_maths">Please select Maths</string>
+    <string name="select_chemistry">Please select Chemistry</string>
+    <string name="select_physics">Please select Physics</string>
+    <string name="select_biology">Please select Biology</string>
+    <string name="fill_confirm_password">Please fill Confirm Password</string>
+    <string name="fill_valid_confirm_password">Please fill same password</string>
+
+    <string name="valid_email_id">Please fill valid Email Id</string>
+
+    <string name="signup_progress">Sin up progress, Please wait…</string>
+
+
+
+<!--    Common strings-->
+
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="alert">Alert</string>
+    <string name="alert_msg">Did you Logout from the app?</string>
+    <string name="lang_msg">Did you change the Language to Arabic?</string>
+    <string name="exit_msg">Did you Exit from the Form?</string>
+
+    <string name="submit">Submit</string>
+
+
+    <!--Dash Board page-->
+    <string name="dash_board">Dash Board</string>
+    <string name="dash_board_caption">Creative Skills Bank (101 skills)</string>
+    <string name="next">Next</string>
+
+    <string name="very_week">Very weak</string>
+    <string name="very_week_skill">The skill is simple and rare</string>
+    <string name="very_week_ex">Accuracy: Inaccurate in most of my work and I often find errors after completion</string>
+
+    <string name="week">weak</string>
+    <string name="week_skill">The skill is apparent but below average</string>
+    <string name="week_ex">Accuracy: On some important things, I try to be accurate and really get accurate</string>
+
+    <string name="moderate">Moderate</string>
+    <string name="moderate_skill">The skill is shown on average</string>
+    <string name="moderate_ex">Accuracy: I am accurate in important matters and inaccurate in other matters</string>
+
+    <string name="strong">strong</string>
+    <string name="strong_skill">The skill is clearly visible</string>
+    <string name="strong_ex">Accuracy: I am accurate in most matters of my personal and professional life without getting tired</string>
+
+    <string name="very_capable">very capable</string>
+    <string name="very_capable_skill">The skill is definitely visible and very high</string>
+    <string name="very_capable_ex">Accuracy: I am very accurate in all the details of my life and work automatically and I enjoy it</string>
+
+
+   <!-- Questions page-->
+    <string name="fill_all_questions">Please answer all the question(s)</string>
+    <string name="success">Success</string>
+    <string name="questions_title">Questions</string>
+    <string name="ok">OK</string>
+    <string name="congrats">Congrats,you are achieved </string>
+    <string name="question_data_load_msg">Question data loading, Please wait…</string>
+    <string name="upto_mark_msg">You are mark is not upto the 60. Please answer next category questions.</string>
+
+
+    <string name="ke_title">Knowledge Extension</string>
+
+    <string name="leader_name_cat_1">You are now eligible for Strategic (Leader by Objectives)</string>
+    <string name="leader_name_cat_2">You are now eligible for Organizer (Executive Leader)</string>
+    <string name="leader_name_cat_3">You are now eligible for Emotional (leader with love)</string>
+    <string name="leader_name_cat_4">You are now eligible for Adventurer (Leader with Inspiration)</string>
 
 </resources>

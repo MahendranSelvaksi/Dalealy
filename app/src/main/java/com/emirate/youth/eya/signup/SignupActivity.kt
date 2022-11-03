@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.text.InputFilter
 import android.util.Log
 import android.util.Patterns
+import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
@@ -95,7 +98,8 @@ class SignupActivity : BaseActivity() {
     private val biologySpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.biologySpinner) }
 
     private val btn_signup: Button by lazy { findViewById(R.id.btn_signup) }
-    private val commonToolbar: androidx.appcompat.widget.Toolbar by lazy { findViewById(R.id.commonToolbar) }
+    private val commonTitle: TextView by lazy { findViewById(R.id.commonTitle) }
+    private val backButton: ImageView by lazy { findViewById(R.id.backButton) }
 
     val smileyRemover = SmileyRemover()
 
@@ -117,10 +121,18 @@ class SignupActivity : BaseActivity() {
         val gradeAdapter = SpinnerAdapter(this, gradeArray)
         val classAdapter = SpinnerAdapter(this, classArray)
 
-        commonToolbar.setTitle("Sign up")
-        commonToolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        commonTitle.text=resources.getString(R.string.Signup)
 
-        commonToolbar.setNavigationOnClickListener {
+        val logout = findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.logout)
+        val language = findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.language)
+
+        logout.visibility=View.GONE
+
+        language.setOnClickListener {
+            showLanguageChangeDialog(SignupActivity::class.java)
+        }
+
+        backButton.setOnClickListener {
             finish()
         }
 
@@ -134,7 +146,7 @@ class SignupActivity : BaseActivity() {
         biologySpinner.setAdapter(gradeAdapter)
         classSpinner.setAdapter(classAdapter)
 
-        fetchSchool()
+        ///fetchSchool()
 
         nameET.filters = arrayOf<InputFilter>(smileyRemover)
         studentNumberET.filters = arrayOf<InputFilter>(smileyRemover)
@@ -210,7 +222,7 @@ class SignupActivity : BaseActivity() {
             if (it.toString().isNotEmpty() || it.toString().length >= 15)
                 emirateIdTIL.error = null
             else if (it.toString().length < 15)
-                emirateIdTIL.error = "Please fill valid Emirate Id"
+                emirateIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
         }
 
         residentialAreaET.doAfterTextChanged {
@@ -307,7 +319,7 @@ class SignupActivity : BaseActivity() {
                 signUpModel.biology=biologySpinner.text.toString().trim()
 
                Log.w("Success","Sign up request ::::: "+ Gson().toJson(signUpModel).toString())
-                showProgress("Login progress, Please wait...")
+                showProgress(resources.getString(R.string.signup_progress))
                 val request = ServiceBuilder.buildService(ApiInterface::class.java)
                 val call = request.register(nameET.text.toString(), studentNumberET.text.toString(),
                     school_name_spinner.text.toString(), educationalPathET.text.toString(),
@@ -370,26 +382,26 @@ class SignupActivity : BaseActivity() {
                 .isEmpty() && chemistrySpinner.text.toString().isEmpty() &&
             physicsSpinner.text.toString().isEmpty() && biologySpinner.text.toString().isEmpty()
         ) {
-            nameTIL.error = "Please fill name"
-            studentNumberTIL.error = "Please fill Student number"
-            schoolNameTIL.error = "Please select School name"
-            educationalPathTIL.error = "Please fill Educational Path"
-            classTIL.error = "Please select Class"
-            emailIdTIL.error = "Please fill Email ID"
-            contactNumberTIL.error = "Please fill Contact Number"
-            identificationNumberTIL.error = "Please fill Identification Number"
-            dobTIL.error = "Please fill Date of Birth"
-            intrestTIL.error = "Please fill Intrest"
-            emirateIdTIL.error = "Please fill Emirate Id"
-            residentialAreaTIL.error = "Please fill Residential Area"
-            passwordTIL.error = "Please fill Password"
-            confirmPasswordTIL.error = "Please fill Confirm Password"
-            arabicTIL.error = "Please select Arabic"
-            englishTIL.error = "Please select English"
-            mathsTIL.error = "Please select Maths"
-            chemistryTIL.error = "Please select Chemistry"
-            physicsTIL.error = "Please select Physics"
-            biologyTIL.error = "Please select Biology"
+            nameTIL.error = resources.getString(R.string.fill_name)
+            studentNumberTIL.error =resources.getString(R.string.fill_student_number)
+            schoolNameTIL.error = resources.getString(R.string.fill_schl_name)
+            educationalPathTIL.error = resources.getString(R.string.fill_edu_path)
+            classTIL.error = resources.getString(R.string.select_class)
+            emailIdTIL.error =resources.getString(R.string.fill_email_id)
+            contactNumberTIL.error = resources.getString(R.string.fill_contact_num)
+            identificationNumberTIL.error = resources.getString(R.string.fill_identifiction_num)
+            dobTIL.error = resources.getString(R.string.fill_dob)
+            intrestTIL.error = resources.getString(R.string.fill_interest)
+            emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
+            residentialAreaTIL.error = resources.getString(R.string.fill_residential_area)
+            passwordTIL.error = resources.getString(R.string.fill_password)
+            confirmPasswordTIL.error = resources.getString(R.string.fill_confirm_password)
+            arabicTIL.error = resources.getString(R.string.select_arabic)
+            englishTIL.error = resources.getString(R.string.select_english)
+            mathsTIL.error = resources.getString(R.string.select_maths)
+            chemistryTIL.error = resources.getString(R.string.select_chemistry)
+            physicsTIL.error = resources.getString(R.string.select_physics)
+            biologyTIL.error = resources.getString(R.string.select_biology)
             return false
         } else if (nameET.text.toString().isEmpty() || studentNumberET.text.toString()
                 .isEmpty() || school_name_spinner.text.toString().isEmpty() ||
@@ -407,77 +419,77 @@ class SignupActivity : BaseActivity() {
         ) {
 
             if (nameET.text.toString().isEmpty()) {
-                nameTIL.error = "Please fill name"
+                nameTIL.error = resources.getString(R.string.fill_name)
             }
             if (studentNumberET.text.toString().isEmpty()) {
-                studentNumberTIL.error = "Please fill Student number"
+                studentNumberTIL.error =resources.getString(R.string.fill_student_number)
             }
             if (school_name_spinner.text.toString().isEmpty()) {
-                schoolNameTIL.error = "Please select School name"
+                schoolNameTIL.error = resources.getString(R.string.fill_schl_name)
             }
             if (educationalPathET.text.toString().isEmpty()) {
-                educationalPathTIL.error = "Please fill Educational Path"
+                educationalPathTIL.error = resources.getString(R.string.fill_edu_path)
             }
             if (classSpinner.text.toString().isEmpty()) {
-                classTIL.error = "Please select Class"
+                classTIL.error = resources.getString(R.string.select_class)
             }
             if (emailIdET.text.toString().isEmpty()) {
-                emailIdTIL.error = "Please fill Email ID"
+                emailIdTIL.error =resources.getString(R.string.fill_email_id)
             }
             if (contactNumberET.text.toString().isEmpty()) {
-                contactNumberTIL.error = "Please fill Contact Number"
+                contactNumberTIL.error = resources.getString(R.string.fill_contact_num)
             }
             if (identificationNumberET.text.toString().isEmpty()) {
-                identificationNumberTIL.error = "Please fill Identification Number"
+                identificationNumberTIL.error = resources.getString(R.string.fill_identifiction_num)
             }
             if (dobET.text.toString().isEmpty()) {
-                dobTIL.error = "Please fill Date of Birth"
+                dobTIL.error = resources.getString(R.string.fill_dob)
             }
             if (intrestSpinner.text.toString().isEmpty()) {
-                intrestTIL.error = "Please fill Intrest"
+                intrestTIL.error = resources.getString(R.string.fill_interest)
             }
             if (emirateIdET.text.toString().isEmpty()) {
-                emirateIdTIL.error = "Please fill Emirate Id"
+                emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
             }
             if (residentialAreaET.text.toString().isEmpty()) {
-                residentialAreaTIL.error = "Please fill Residential Area"
+                residentialAreaTIL.error = resources.getString(R.string.fill_residential_area)
             }
             if (passwordET.text.toString().isEmpty()) {
-                passwordTIL.error = "Please fill Password"
+                passwordTIL.error = resources.getString(R.string.fill_password)
             }
             if (confirmPasswordET.text.toString().isEmpty()) {
-                confirmPasswordTIL.error = "Please fill Confirm Password"
+                confirmPasswordTIL.error = resources.getString(R.string.fill_confirm_password)
             }
             if (arabicSpinner.text.toString().isEmpty()) {
-                arabicTIL.error = "Please select Arabic"
+                arabicTIL.error = resources.getString(R.string.select_arabic)
             }
             if (englishSpinner.text.toString().isEmpty()) {
-                englishTIL.error = "Please select English"
+                englishTIL.error = resources.getString(R.string.select_english)
             }
             if (mathsSpinner.text.toString().isEmpty()) {
-                mathsTIL.error = "Please select Maths"
+                mathsTIL.error = resources.getString(R.string.select_maths)
             }
             if (chemistrySpinner.text.toString().isEmpty()) {
-                chemistryTIL.error = "Please select Chemistry"
+                chemistryTIL.error = resources.getString(R.string.select_chemistry)
             }
             if (physicsSpinner.text.toString().isEmpty()) {
-                physicsTIL.error = "Please select Physics"
+                physicsTIL.error = resources.getString(R.string.select_physics)
             }
             if (biologySpinner.text.toString().isEmpty()) {
-                biologyTIL.error = "Please select Biology"
+                biologyTIL.error = resources.getString(R.string.select_biology)
             }
             return false
         } else {
             if (emirateIdET.text.toString().length < 15) {
-                emirateIdTIL.error = "Please fill valid Emirate Id"
+                emirateIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
                 return false
             } else if (confirmPasswordET.text.toString() != passwordET.text.toString()) {
-                confirmPasswordTIL.error = "Please fill same password"
+                confirmPasswordTIL.error = resources.getString(R.string.fill_valid_confirm_password)
                 return false
             } else if (!Patterns.EMAIL_ADDRESS.matcher(emailIdET.text.toString().trim())
                     .matches()
             ) {
-                emailIdTIL.error = "Please fill valid Email Id"
+                emailIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
                 return false
             }
         }
@@ -488,35 +500,5 @@ class SignupActivity : BaseActivity() {
         val intent = Intent(this, DashboardActivity::class.java)
         this.startActivity(intent)
         finish()
-    }
-
-    private fun fetchSchool(){
-        showProgress("School data loading, Please wait...")
-        val request = ServiceBuilder.buildService(ApiInterface::class.java)
-        val call = request.FetchSchool()
-        call.enqueue(object : retrofit2.Callback<ResponseBody> {
-            override fun onResponse(
-                call: Call<ResponseBody>,
-                response: Response<ResponseBody>
-            ) {
-                hideProgress()
-                if (response.isSuccessful) {
-                    var str_response = response.body()!!.string()
-                    //creating json object
-                    val json = JSONObject(str_response)
-                    Log.w("Success", "json_contact :::: " + json.toString())
-                    if (json.getBoolean("status")) {
-
-                    } else {
-
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                Log.e("error", t.localizedMessage)
-                hideProgress()
-            }
-        })
     }
 }
