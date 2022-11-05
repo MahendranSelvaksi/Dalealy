@@ -62,63 +62,76 @@ class LoginActivity : BaseActivity() {
         }
 
         btn_login.setOnClickListener {
-            if (emirateIdET.text.toString().isEmpty() && passwordET.text.toString().isEmpty()) {
-                emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
-                passwordTIL.error = resources.getString(R.string.fill_password)
-            } else if (emirateIdET.text.toString().isEmpty() || passwordET.text.toString()
+            if (emirateIdET.text.toString().trim().isEmpty() && passwordET.text.toString().trim()
                     .isEmpty()
             ) {
-                if (emirateIdET.text.toString().isEmpty()) {
-                    emirateIdTIL.error =  resources.getString(R.string.fill_emirate_id)
+                emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
+                passwordTIL.error = resources.getString(R.string.fill_password)
+            } else if (emirateIdET.text.toString().trim().isEmpty() || passwordET.text.toString()
+                    .trim()
+                    .isEmpty()
+            ) {
+                if (emirateIdET.text.toString().trim().isEmpty()) {
+                    emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
                 }
-                if (passwordET.text.toString().isEmpty()) {
+                if (passwordET.text.toString().trim().isEmpty()) {
                     passwordTIL.error = resources.getString(R.string.fill_password)
                 }
             } /*else if (emirateIdET.text.toString().length < 15) {
                 emirateIdTIL.error = "Please fill valid Emirate Id"
             } */ else {
-                showProgress(resources.getString(R.string.login_progress))
-                val request = ServiceBuilder.buildService(ApiInterface::class.java)
-                val call = request.login(emirateIdET.text.toString(), passwordET.text.toString())
-                call.enqueue(object : retrofit2.Callback<ResponseBody> {
-                    override fun onResponse(
-                        call: Call<ResponseBody>,
-                        response: Response<ResponseBody>
-                    ) {
-                        hideProgress()
-                        if (response.isSuccessful) {
-                            var str_response = response.body()!!.string()
-                            //creating json object
-                            val json: JSONObject = JSONObject(str_response)
-                            Log.w("Success", "json_contact :::: " + json.toString())
-                            Toast.makeText(
-                                this@LoginActivity,
-                                json.getString("msg"),
-                                Toast.LENGTH_LONG
-                            ).show()
-                            if (json.getBoolean("status")) {
-                                SessionManager.storeSessionStringvalue(applicationContext,AppConstant.LOGIN_SESSION_NAME,
-                                    AppConstant.LOGIN_SESSION_USER_ID,emirateIdET.text.toString())
-                                callRegisterActivity()
-                            } else {
-                                emirateIdTIL.error =  resources.getString(R.string.fill_valid_emirate_id)
-                                passwordTIL.error =  resources.getString(R.string.fill_valid_password)
-                            }
-                        }
-                    }
-
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        Log.e("error", t.localizedMessage)
-                        hideProgress()
-                    }
-                })
+                callAPI()
             }
         }
 
         txt_signup.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
             this.startActivity(intent)
-            finish()
+        }
+    }
+
+    fun callAPI() {
+        if (NetworkHelper.isOnline(applicationContext)) {
+            showProgress(resources.getString(R.string.login_progress))
+            val request = ServiceBuilder.buildService(ApiInterface::class.java)
+            val call =
+                request.login(emirateIdET.text.toString().trim(), passwordET.text.toString().trim())
+            call.enqueue(object : retrofit2.Callback<ResponseBody> {
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+                    hideProgress()
+                    if (response.isSuccessful) {
+                        val str_response = response.body()!!.string()
+                        //creating json object
+                        val json: JSONObject = JSONObject(str_response)
+                        Log.w("Success", "json_contact :::: " + json.toString())
+                        Toast.makeText(
+                            this@LoginActivity,
+                            json.getString("msg"),
+                            Toast.LENGTH_LONG
+                        ).show()
+                        if (json.getBoolean("status")) {
+                            SessionManager.storeSessionStringvalue(
+                                applicationContext, AppConstant.LOGIN_SESSION_NAME,
+                                AppConstant.LOGIN_SESSION_USER_ID, emirateIdET.text.toString()
+                            )
+                            callRegisterActivity()
+                        } else {
+                            emirateIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
+                            passwordTIL.error = resources.getString(R.string.fill_valid_password)
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Log.e("error", t.localizedMessage)
+                    hideProgress()
+                }
+            })
+        } else {
+            showNoNetworkDialog()
         }
     }
 

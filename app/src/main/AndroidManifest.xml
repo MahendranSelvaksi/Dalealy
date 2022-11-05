@@ -15,6 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EYA">
         <activity
+            android:name=".question.SkillsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".question.UniversityListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AdminLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.UserNavigationActivity"
+            android:exported="false" />
+        <activity
             android:name=".question.ImageShownActivity"
             android:exported="false" />
         <activity

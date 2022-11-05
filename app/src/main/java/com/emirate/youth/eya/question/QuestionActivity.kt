@@ -17,6 +17,7 @@ import android.widget.Toast
 import com.emirate.youth.eya.dashboard.DashboardActivity
 import com.emirate.youth.eya.utils.BaseActivity
 import com.emirate.youth.eya.utils.LocaleManager
+import com.emirate.youth.eya.utils.NetworkHelper
 import com.emirate.youth.eya.utils.SpinnerListener
 import com.emirate.youth.eya.utils.model.QuestionModel
 import com.emirate.youth.eya.utils.network.ApiInterface
@@ -82,14 +83,14 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
     private fun showMarksDialog(mark: String) {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.success)
-        val value = String.format("%s %s score \n %s ", resources.getString(R.string.congrats), mark,resources.getString(R.string.leader_name_cat_1))
+        val value = String.format("%s %s %s \n %s ", resources.getString(R.string.congrats), mark,resources.getString(R.string.score),resources.getString(R.string.leader_name_cat_1))
 
         builder.setMessage(value)
         builder.setPositiveButton(
             R.string.ok
         ) { dialog, which -> // do something like...
             if (mark.toInt()>60) {
-                val intent = Intent(this, ImageShownActivity::class.java)
+                val intent = Intent(this, SkillsActivity::class.java)
                 intent.putExtra("PageNumber", 1)
                 this.startActivity(intent)
                 finish()
@@ -101,9 +102,6 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
             }
         }
 
-        // create and show the alert dialog
-
-        // create and show the alert dialog
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
@@ -137,6 +135,7 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
     }
 
     private fun fetchQuestions() {
+        if (NetworkHelper.isOnline(applicationContext)) {
         showProgress(resources.getString(R.string.question_data_load_msg))
         val request = ServiceBuilder.buildService(ApiInterface::class.java)
         val call = request.FetchQuestionnaire()
@@ -157,18 +156,20 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
                         for (i in 0 until jsonArray.length()) {
                             val jsonObject = jsonArray.getJSONObject(i)
                             val questionModel = QuestionModel()
-                            questionModel.ques_no = jsonObject.getString("ques_no")
-                            questionModel.ques = jsonObject.getString("ques")
-                            questionModel.ques_ar = jsonObject.getString("ques_ar")
-                            questionModel.ques_cat = jsonObject.getString("ques_cat")
-                            questionModel.ques_desc = jsonObject.getString("ques_desc")
-                            questionModel.ques_desc_ar = jsonObject.getString("ques_desc_ar")
-                            questionModel.ques_ex = jsonObject.getString("ques_ex")
-                            questionModel.ques_ex_ar = jsonObject.getString("ques_ex_ar")
-                            questionModel.ques_type = jsonObject.getString("ques_type")
-                            questionModel.ques_value = jsonObject.getString("ques_value")
-                            Log.w("Success", "questionModel :::: " + questionModel.ques)
-                            questionList.add(questionModel)
+                            if (jsonObject.getString("ques_cat") == "1") {
+                                questionModel.ques_no = jsonObject.getString("ques_no")
+                                questionModel.ques = jsonObject.getString("ques")
+                                questionModel.ques_ar = jsonObject.getString("ques_ar")
+                                questionModel.ques_cat = jsonObject.getString("ques_cat")
+                                questionModel.ques_desc = jsonObject.getString("ques_desc")
+                                questionModel.ques_desc_ar = jsonObject.getString("ques_desc_ar")
+                                questionModel.ques_ex = jsonObject.getString("ques_ex")
+                                questionModel.ques_ex_ar = jsonObject.getString("ques_ex_ar")
+                                questionModel.ques_type = jsonObject.getString("ques_type")
+                                questionModel.ques_value = jsonObject.getString("ques_value")
+                                Log.w("Success", "questionModel :::: " + questionModel.ques)
+                                questionList.add(questionModel)
+                            }
                         }
                         Log.w("Success", "questionList ::: " + questionList.size)
                         mQuestionAdapter.setItems(questionList)
@@ -184,5 +185,8 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
                 hideProgress()
             }
         })
+        }else{
+            showNoNetworkDialog()
+        }
     }
 }

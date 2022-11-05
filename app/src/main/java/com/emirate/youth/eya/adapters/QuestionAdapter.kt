@@ -61,14 +61,19 @@ class QuestionAdapter(var mContext: Activity, var mSpinnerListener: SpinnerListe
             val gradeArray = mContext.resources.getStringArray(R.array.evaluation_array).toList()
             val gradeAdapter = SpinnerAdapter(mContext, gradeArray)
 
-            if (mContext is QuestionActivity){
-                holder.cardView.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.cat_1_bg))
-            }else if (mContext is Question2Activity){
-                holder.cardView.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.cat_2_bg))
-            }else if (mContext is Question3Activity){
-                holder.cardView.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.cat_3_bg))
-            }else if (mContext is Question4Activity){
-                holder.cardView.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.cat_4_bg))
+            when (mContext) {
+                is QuestionActivity -> {
+                    holder.cardView.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.cat_1_bg))
+                }
+                is Question2Activity -> {
+                    holder.cardView.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.cat_2_bg))
+                }
+                is Question3Activity -> {
+                    holder.cardView.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.cat_3_bg))
+                }
+                is Question4Activity -> {
+                    holder.cardView.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.cat_4_bg))
+                }
             }
 
             if (questionList[position].given_answer.isNotEmpty()){

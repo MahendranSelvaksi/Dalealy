@@ -57,4 +57,9 @@
 
     <style name="Theme.EYA.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Theme.EYA.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>

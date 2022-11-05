@@ -15,4 +15,10 @@
 
 
     <color name="rb_tint_color">#E91E63</color>
+
+
+    <color name="cat_1_text_color">#7030a0</color>
+    <color name="cat_2_text_color">#003bb0</color>
+    <color name="cat_3_text_color">#767171</color>
+    <color name="cat_4_text_color">#e4334e</color>
 </resources>

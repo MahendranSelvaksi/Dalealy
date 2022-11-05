@@ -48,7 +48,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/student_number_label"
                 >
 
@@ -66,7 +66,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/school_name_label">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -85,7 +85,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/educational_path_label"
                >
 
@@ -103,7 +103,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/class_label">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -121,7 +121,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/email_id_label"
                >
 
@@ -139,7 +139,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/contact_number_label"
                >
 
@@ -157,7 +157,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/identification_number_label"
                 >
 
@@ -175,7 +175,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/date_of_birth_label"
                >
 
@@ -195,7 +195,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/interests_label">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -213,7 +213,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/emirate_id_label"
                 >
 
@@ -231,7 +231,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/residential_area_label"
                 >
 
@@ -256,7 +256,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:hint="@string/arabic_label">
 
@@ -275,7 +275,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:hint="@string/english_label">
 
@@ -294,7 +294,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:hint="@string/maths_label">
 
@@ -314,7 +314,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:hint="@string/chemistry_label">
 
@@ -333,7 +333,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:hint="@string/physics_label">
 
@@ -352,7 +352,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:hint="@string/biology_label">
 
@@ -371,10 +371,9 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/password_label"
-                app:endIconMode="password_toggle"
-                app:passwordToggleEnabled="true">
+                app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordET"
@@ -389,10 +388,9 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
+                android:layout_margin="@dimen/_5sdp"
                 android:hint="@string/confirm_password_label"
-                app:endIconMode="password_toggle"
-                app:passwordToggleEnabled="true">
+                app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/confirmPasswordET"

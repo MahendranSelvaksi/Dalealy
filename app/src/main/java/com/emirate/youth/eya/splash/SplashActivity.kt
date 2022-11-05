@@ -8,6 +8,7 @@ import com.emirate.youth.eya.R
 import com.emirate.youth.eya.login.LoginActivity
 import android.os.Handler
 import android.view.WindowManager
+import com.emirate.youth.eya.admin.UserNavigationActivity
 import com.emirate.youth.eya.dashboard.DashboardActivity
 import com.emirate.youth.eya.utils.SessionManager
 
@@ -30,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
                 this.startActivity(intent)
                 finish()
             }else{
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, UserNavigationActivity::class.java)
                 this.startActivity(intent)
                 finish()
             }

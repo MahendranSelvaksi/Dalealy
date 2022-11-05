@@ -37,12 +37,13 @@
     <string name="phone_language">English</string>
 
     <string-array name="school_name_array">
-        <item>School 1</item>
-        <item>School 2</item>
-        <item>School 3</item>
-        <item>School 4</item>
-        <item>School 5</item>
-        <item>School 6</item>
+        <item> Khor Fakkan - 2 - KG</item>
+        <item>Al-Morooj - KG</item>
+        <item> Khor Fakkan - 1 - KG</item>
+        <item>Kalba - KG</item>
+        <item>Al-Bayader - KG</item>
+        <item> Al-Yasmeen - KG</item>
+        <item>Al-Nahwah School - KG - Cycle 1</item>
     </string-array>
 
     <string-array name="intrest_array">
@@ -108,10 +109,11 @@
     <string name="valid_email_id">Please fill valid Email Id</string>
 
     <string name="signup_progress">Sin up progress, Please wait…</string>
+    <string name="school_progress">School data loading, Please wait…</string>
+    <string name="admin_dash_progress">Student(s) data loading, Please wait…</string>
 
 
-
-<!--    Common strings-->
+    <!--    Common strings-->
 
     <string name="Yes">Yes</string>
     <string name="No">No</string>
@@ -119,6 +121,8 @@
     <string name="alert_msg">Did you Logout from the app?</string>
     <string name="lang_msg">Did you change the Language to Arabic?</string>
     <string name="exit_msg">Did you Exit from the Form?</string>
+    <string name="no_internet_msg">Internet not available, Cross check your internet connectivity and try again</string>
+    <string name="data_issue_msg">Data issue from server, Please try again</string>
 
     <string name="submit">Submit</string>
 
@@ -149,21 +153,137 @@
     <string name="very_capable_ex">Accuracy: I am very accurate in all the details of my life and work automatically and I enjoy it</string>
 
 
-   <!-- Questions page-->
+    <!-- Questions page-->
     <string name="fill_all_questions">Please answer all the question(s)</string>
-    <string name="success">Success</string>
+    <string name="success">Congrats</string>
     <string name="questions_title">Questions</string>
     <string name="ok">OK</string>
-    <string name="congrats">Congrats,you are achieved </string>
+    <string name="score">score</string>
+    <string name="congrats">You are achieved </string>
     <string name="question_data_load_msg">Question data loading, Please wait…</string>
-    <string name="upto_mark_msg">You are mark is not upto the 60. Please answer next category questions.</string>
+    <string name="upto_mark_msg">You are mark is not up to the 60. Please answer next category questions.</string>
 
 
     <string name="ke_title">Knowledge Extension</string>
+    <string name="no_data">No data Available</string>
 
     <string name="leader_name_cat_1">You are now eligible for Strategic (Leader by Objectives)</string>
     <string name="leader_name_cat_2">You are now eligible for Organizer (Executive Leader)</string>
     <string name="leader_name_cat_3">You are now eligible for Emotional (leader with love)</string>
     <string name="leader_name_cat_4">You are now eligible for Adventurer (Leader with Inspiration)</string>
+
+    <string name="sudent_login">Student Login</string>
+    <string name="user_name_label">User Name</string>
+    <string name="fill_user_name">Please fill User Name</string>
+    <string name="admin_pannel">Admin Panel</string>
+    <string name="title_activity_unversity_list">Universities</string>
+    <string name="close">Close</string>
+    <string name="admin_login">Admin Login</string>
+    <string name="link_caption">Link to Web Page</string>
+
+    <string-array name="university_name_array">
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN MOLECULAR AND MEDICAL GENETICS</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN COMPUTER ENGINEERING</item>
+        <item>Accredited Programs - CAA  BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</item>
+        <item>Accredited Programs - CAA APPLIED BACHELOR IN INFORMATION SECURITY ENGINEERING TECHNOLOGY</item>
+        <item>Accredited Programs - CAA BACHELOR OF SCIENCE IN CIVIL ENGINEERING</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN INDUSTRIAL ENGINEERING</item>
+        <item>Accredited Programs - CAA  BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN BIOMEDICAL ENGINEERING</item>
+        <item>Accredited Programs - CAA  BACHELOR OF BUSINESS ADMINISTRATION IN DIGITAL MARKETING COMMUNICATIONS</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN CYBERSECURITY ENGINEERING</item>
+        <item>Ajman University</item>
+        <item>Accredited Programs - CAA  APPLIED BACHELOR IN ELECTRO-MECHANICAL SYSTEMS ENGINEERING TECHNOLOGY</item>
+        <item>Ajman University</item>
+        <item>Accredited Programs - CAA  BACHELOR OF SCIENCE IN PUBLIC HEALTH</item>
+        <item>Abu Dhabi University (Sciences in Aviation)</item>
+        <item>Accredited Programs - CAA APPLIED BACHELOR IN AIRCRAFT MAINTENANCE MANAGEMENT</item>
+        <item>Accredited Programs - CAA DIPLOMA IN AIR TRAFFIC MANAGEMENT</item>
+        <item>Accredited Programs - CAA APPLIED BACHELOR IN INFORMATION SECURITY ENGINEERING TECHNOLOGY</item>
+        <item>Accredited Programs - CAA BACHELOR OF SCIENCE IN SOFTWARE ENGINEERING</item>
+        <item>Accredited Programs - CAA  DIPLOMA IN ELECTRO-MECHANICAL SYSTEMS ENGINEERING TECHNOLOGY</item>
+        <item>Accredited Programs - CAA  BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING</item>
+    </string-array>
+
+    <string-array name="university_link_aaray">
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+    </string-array>
+
+
+    <string-array name="cat_1_skills">
+        <item>Independent and different in thought and action</item>
+        <item>Characterized by great ambition and inner motivation</item>
+        <item>high self-confidence</item>
+        <item>does not like to plan and prefers to improvise</item>
+        <item>Dislikes rules, procedures, and routine</item>
+        <item>Loves nature, beauty and romance</item>
+        <item>spontanious, simple and frankness</item>
+        <item>bold and loves adventure and exploration</item>
+        <item>Makes decisions that are big and surprising</item>
+        <item>Characteristics: indifference / chaos / optimism</item>
+    </string-array>
+
+
+    <string-array name="cat_2_skills">
+        <item>Rationality and avoidance of feelings / seriousness</item>
+        <item>Boldness and love of confrontation with others</item>
+        <item>Has qualities such as: loud voice / strong memory</item>
+        <item>Gets things done quickly</item>
+        <item>Intolerance</item>
+        <item>Cogency and abundance of information</item>
+        <item>Executing opinions and arriving at the truth</item>
+        <item> Perseverance, patience and challenge</item>
+        <item> Focus on results with no reliance on intuition</item>
+        <item>Matching, comparing and prioritizing</item>
+    </string-array>
+
+    <string-array name="cat_3_skills">
+        <item>EMPATHY </item>
+        <item>love of fame</item>
+        <item>Affect and influence</item>
+        <item> Love fast and deeply</item>
+        <item> Very cooperative and with everyone</item>
+        <item> sacrifice/belonging</item>
+        <item> Generosity without expecting returns</item>
+        <item> Tolerance, kindness and non-hatred</item>
+        <item> Confidence in others and multiple friends</item>
+        <item> Characteristics: sensitive / shy/cheerful</item>
+    </string-array>
+
+    <string-array name="cat_4_skills">
+        <item>Behave formally and abide by etiquette</item>
+        <item>Attention to appearance, elegance and hygiene</item>
+        <item>Seek routine and avoide experimentation</item>
+        <item>Attention to detail</item>
+        <item>Assess and evaluate everything</item>
+        <item>Organized and has multiple plans</item>
+        <item>Speaker, educated and persuasive</item>
+        <item>Sometimes criticizes and blames</item>
+        <item>Careful observation</item>
+        <item>Careful and seeks safety</item>
+    </string-array>
+
+    <string name="skill">Skill for Student</string>
+
 
 </resources>

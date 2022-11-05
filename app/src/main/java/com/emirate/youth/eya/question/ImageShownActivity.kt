@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.emirate.youth.eya.R
+import com.emirate.youth.eya.admin.AdminDashboardActivity
 import com.emirate.youth.eya.dashboard.DashboardActivity
 import com.emirate.youth.eya.utils.BaseActivity
 import com.google.android.material.textfield.TextInputLayout
@@ -75,6 +76,8 @@ class ImageShownActivity : BaseActivity() {
                     finish()
                 }
                 4 -> {
+                    val intent = Intent(this, UniversityListActivity::class.java)
+                    this.startActivity(intent)
                     finish()
                 }
             }
@@ -106,7 +109,6 @@ class ImageShownActivity : BaseActivity() {
             cjIV.setImageResource(R.drawable.cj4)
             fjIV.setImageResource(R.drawable.fj4)
             fsIV.setImageResource(R.drawable.fs4)
-            btn_next.setText("Close")
         }
     }
 }

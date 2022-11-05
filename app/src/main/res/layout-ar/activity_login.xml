@@ -26,7 +26,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/_10sdp"
             android:ems="10"
             android:hint="@string/emirate_id_label"
             android:inputType="textPersonName">
@@ -45,10 +45,9 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_3sdp"
+            android:layout_margin="@dimen/_10sdp"
             android:hint="@string/password_label"
-            app:endIconMode="password_toggle"
-            app:passwordToggleEnabled="true">
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordET"

@@ -39,12 +39,13 @@
     <string name="new_user_label">طالب جديد</string>
     <string name="phone_language">English</string>
     <string-array name="school_name_array">
-        <item>School 1</item>
-        <item>School 2</item>
-        <item>School 3</item>
-        <item>School 4</item>
-        <item>School 5</item>
-        <item>School 6</item>
+        <item>روضة خورفكان 2</item>
+        <item>روضة المروج</item>
+        <item>روضة خورفكان 1</item>
+        <item> روضة كلباء</item>
+        <item> روضة البيادر</item>
+        <item> روضة الياسمين</item>
+        <item> روضة ومدرسة النحوة - الحلقة الأولى</item>
     </string-array>
 
     <string-array name="intrest_array">
@@ -107,8 +108,14 @@
 
     <string name="valid_email_id">يرجى ملء معرف بريد إلكتروني صالح</string>
 
-
     <string name="signup_progress">تقدم التسجيل ، يرجى الانتظار …</string>
+    <string name="school_progress">جاري تحميل بيانات المدرسة ، يرجى الانتظار …</string>
+    <string name="admin_dash_progress">يتم تحميل بيانات الطالب (الطلاب) ، الرجاء الانتظار …</string>
+
+    <string name="no_internet_msg">الإنترنت غير متوفر ، تحقق من اتصالك بالإنترنت وحاول مرة أخرى</string>
+    <string name="data_issue_msg">مشكلة البيانات من الخادم ، يرجى المحاولة مرة أخرى</string>
+
+    <string name="no_data">لا تتوافر بيانات</string>
 
 
     <!--    Common strings-->
@@ -119,7 +126,7 @@
     <string name="alert_msg">هل قمت بتسجيل الخروج من التطبيق؟</string>
     <string name="lang_msg">هل قمت بتغيير اللغة إلى اللغة الإنجليزية؟</string>
     <string name="exit_msg">هل خرجت من النموذج؟</string>
-
+    <string name="score">نتيجة</string>
     <string name="submit">يُقدِّم</string>
 
     <!--Dash Board page-->
@@ -148,7 +155,7 @@
     <string name="very_capable_ex">الدقة : أكون دقيق جدا في جميع تفاصيل  حياتي  وعملي تلقائيا  واستمتع بها </string>
 
     <string name="fill_all_questions">الرجاء الإجابة على جميع الأسئلة)</string>
-    <string name="success">النجاح</string>
+    <string name="success">تهاني</string>
     <string name="questions_title">أسئلة</string>
     <string name="ok">نعم</string>
     <string name="congrats"> مبروك ، لقد حققت </string>
@@ -162,4 +169,122 @@
     <string name="leader_name_cat_2">أنت الآن مؤهل للمنظم (القائد التنفيذي)</string>
     <string name="leader_name_cat_3">أنت الآن مؤهل لـ عاطفي (القائد بالحب)</string>
     <string name="leader_name_cat_4">أنت الآن مؤهل للحصول على مغامر (القائد مع الإلهام)</string>
+
+    <string name="sudent_login">تسجيل دخول الطالب</string>
+    <string name="user_name_label">اسم االمستخدم</string>
+    <string name="fill_user_name">الرجاء تعبئة اسم المستخدم</string>
+    <string name="admin_pannel">لوحة الادارة</string>
+    <string name="title_activity_unversity_list">الجامعات</string>
+    <string name="close">قريب</string>
+    <string name="admin_login">دخول المشرف</string>
+
+    <string name="link_caption">ارتباط بصفحة الويب</string>
+
+
+
+    <string-array name="university_link_aaray">
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+
+    </string-array>
+
+
+    <string-array name="university_name_array">
+        <item>البرامج المعتمدة - بكالوريوس العلوم في الجينات الجزيئية والطبية</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في هندسة الكمبيوتر</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في تكنولوجيا المعلومات</item>
+        <item>البرامج المعتمدة - بكالوريوس التطبيقية في أمن المعلومات في تكنولوجيا الهندسة</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في الهندسة المدنية</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في الهندسة الصناعية CAA</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في الهندسة الميكانيكية</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في الهندسة الطبية الحيوية</item>
+        <item>البرامج المعتمدة - بكالوريوس إدارة الأعمال في CAA في اتصالات التسويق الرقمي</item>
+        <item>البرامج المعتمدة -بكالوريوس العلوم في هندسة الأمن السيبراني</item>
+        <item>جامعة عجمان</item>
+        <item>البرامج المعتمدة - بكالوريوس التطبيقية في هندسة النظم الكهربائية والميكانيكية CAA</item>
+        <item>جامعة عجمان</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في الصحة العامة CAA</item>
+        <item>جامعة أبوظبى ( العلوم في الطيران)</item>
+        <item>البرامج المعتمدة - بكالوريوس طبقت من قبل هيئة الطيران المدني في إدارة صيانة الطائرات</item>
+        <item>البرامج المعتمدة - دبلوم CAA في إدارة حركة الطيران</item>
+        <item>البرامج المعتمدة - بكالوريوس التطبيقية في أمن المعلومات في تكنولوجيا الهندسة</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في هندسة البرمجيات</item>
+        <item>البرامج المعتمدة - دبلوم CAA في هندسة النظم الكهربائية والميكانيكية</item>
+        <item>البرامج المعتمدة - بكالوريوس العلوم في الهندسة الكهربائية</item>
+    </string-array>
+
+    <string-array name="cat_1_skills">
+        <item>مستقل ومختلف في الفكر والعمل</item>
+        <item>يتميز بالطموح الكبير والدافع الداخلي</item>
+        <item>ثقة عالية بالنفس</item>
+        <item>لا يحب التخطيط ويفضل الارتجال</item>
+        <item>يكره القواعد والإجراءات والروتين</item>
+        <item>يحب الطبيعة والجمال والرومانسية</item>
+        <item>عفوية وبسيطة وصراحة</item>
+        <item>جريء ويحب المغامرة والاستكشاف</item>
+        <item>يتخذ قرارات كبيرة ومدهشة</item>
+        <item>الخصائص: اللامبالاة / الفوضى / التفاؤل</item>
+    </string-array>
+
+
+    <string-array name="cat_2_skills">
+        <item>العقلانية وتجنب المشاعر / الجدية</item>
+        <item>الجرأة وحب المواجهة مع الآخرين</item>
+        <item>له صفات مثل: صوت مرتفع / ذاكرة قوية</item>
+        <item>ينجز الأمور بسرعة</item>
+        <item>تعصب</item>
+        <item>الحجة ووفرة المعلومات</item>
+        <item>إبداء الرأي والوصول إلى الحقيقة</item>
+        <item>المثابرة والصبر والتحدي</item>
+        <item> ركز على النتائج دون الاعتماد على الحدس</item>
+        <item>المطابقة والمقارنة وتحديد الأولويات</item>
+    </string-array>
+
+    <string-array name="cat_3_skills">
+        <item>العطف</item>
+        <item>حب الشهرة</item>
+        <item>التأثير والتأثير</item>
+        <item>حب سريع وعميق</item>
+        <item>متعاون للغاية ومع الجميع</item>
+        <item>التضحية / الانتماء</item>
+        <item>الكرم دون توقع عوائد</item>
+        <item>التسامح واللطف والكره</item>
+        <item>الثقة بالآخرين وتعدد الأصدقاء</item>
+        <item>الخصائص: حساس / خجول / مرح</item>
+    </string-array>
+
+    <string-array name="cat_4_skills">
+        <item>التصرف بشكل رسمي والالتزام بالآداب</item>
+        <item>الاهتمام بالمظهر والأناقة والنظافة</item>
+        <item>ابحث عن الروتين وتجنب التجريب</item>
+        <item>انتبه للتفاصيل</item>
+        <item>تقييم وتقييم كل شيء</item>
+        <item>منظمة ولها خطط متعددة</item>
+        <item>متحدث متعلم ومقنع</item>
+        <item>أحيانا ينتقد ويلوم</item>
+        <item>مراقبة دقيقة</item>
+        <item>حريص ويسعى للأمان</item>
+    </string-array>
+
+    <string name="skill">مهارة للطالب</string>
+
 </resources>

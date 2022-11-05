@@ -11,6 +11,7 @@ import android.view.ContextThemeWrapper
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.emirate.youth.eya.R
+import com.emirate.youth.eya.admin.UserNavigationActivity
 import com.emirate.youth.eya.dashboard.DashboardActivity
 import com.emirate.youth.eya.login.LoginActivity
 import java.util.*
@@ -83,7 +84,7 @@ abstract class BaseActivity : AppCompatActivity() {
             R.string.Yes
         ) { dialog, which -> // do something like...
             SessionManager.callLogout(applicationContext)
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, UserNavigationActivity::class.java)
             this.startActivity(intent)
             finish()
         }
@@ -158,5 +159,41 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         resetTitle()
+    }
+
+    fun showNoNetworkDialog(){
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.alert)
+
+        builder.setMessage(R.string.no_internet_msg)
+        builder.setNeutralButton(
+            R.string.ok
+        ) { dialog, which -> // do something like...
+            dialog.dismiss()
+        }
+
+        // create and show the alert dialog
+
+        // create and show the alert dialog
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    fun showFailureDataDialog(){
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.alert)
+
+        builder.setMessage(R.string.data_issue_msg)
+        builder.setNeutralButton(
+            R.string.ok
+        ) { dialog, which -> // do something like...
+            dialog.dismiss()
+        }
+
+        // create and show the alert dialog
+
+        // create and show the alert dialog
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }

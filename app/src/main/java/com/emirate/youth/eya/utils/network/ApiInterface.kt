@@ -27,4 +27,7 @@ interface ApiInterface {
 
     @GET("FetchSchool")
     fun FetchSchool(): Call<ResponseBody>
+
+    @GET("NewUserList")
+    fun NewUserList(): Call<ResponseBody>
 }

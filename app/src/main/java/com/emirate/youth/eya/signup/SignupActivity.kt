@@ -16,10 +16,8 @@ import androidx.core.widget.doAfterTextChanged
 import com.emirate.youth.eya.R
 import com.emirate.youth.eya.adapters.SpinnerAdapter
 import com.emirate.youth.eya.dashboard.DashboardActivity
-import com.emirate.youth.eya.utils.AppConstant
-import com.emirate.youth.eya.utils.BaseActivity
-import com.emirate.youth.eya.utils.SessionManager
-import com.emirate.youth.eya.utils.SmileyRemover
+import com.emirate.youth.eya.login.LoginActivity
+import com.emirate.youth.eya.utils.*
 import com.emirate.youth.eya.utils.model.SignupModel
 import com.emirate.youth.eya.utils.network.ApiInterface
 import com.emirate.youth.eya.utils.network.ServiceBuilder
@@ -33,6 +31,7 @@ import retrofit2.Call
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class SignupActivity : BaseActivity() {
@@ -102,6 +101,7 @@ class SignupActivity : BaseActivity() {
     private val backButton: ImageView by lazy { findViewById(R.id.backButton) }
 
     val smileyRemover = SmileyRemover()
+    val schoolNameArray = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,33 +111,33 @@ class SignupActivity : BaseActivity() {
             getSupportActionBar()!!.hide();
         }
 
-        val schoolNameArray = resources.getStringArray(R.array.school_name_array).toList()
+        //  val schoolNameArray = resources.getStringArray(R.array.school_name_array).toList()
         val interestArray = resources.getStringArray(R.array.intrest_array).toList()
         val gradeArray = resources.getStringArray(R.array.grade_array).toList()
         val classArray = resources.getStringArray(R.array.class_array).toList()
 
-        val schoolAdapter = SpinnerAdapter(this, schoolNameArray)
+
         val interestAdapter = SpinnerAdapter(this, interestArray)
         val gradeAdapter = SpinnerAdapter(this, gradeArray)
         val classAdapter = SpinnerAdapter(this, classArray)
 
-        commonTitle.text=resources.getString(R.string.Signup)
+        commonTitle.text = resources.getString(R.string.Signup)
 
         val logout = findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.logout)
         val language = findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.language)
 
-        logout.visibility=View.GONE
+        logout.visibility = View.GONE
 
         language.setOnClickListener {
             showLanguageChangeDialog(SignupActivity::class.java)
         }
 
         backButton.setOnClickListener {
-            finish()
+           onBackPressed()
         }
 
         intrestSpinner.setAdapter(interestAdapter)
-        school_name_spinner.setAdapter(schoolAdapter)
+
         arabicSpinner.setAdapter(gradeAdapter)
         englishSpinner.setAdapter(gradeAdapter)
         mathsSpinner.setAdapter(gradeAdapter)
@@ -146,7 +146,7 @@ class SignupActivity : BaseActivity() {
         biologySpinner.setAdapter(gradeAdapter)
         classSpinner.setAdapter(classAdapter)
 
-        ///fetchSchool()
+        fetchSchool()
 
         nameET.filters = arrayOf<InputFilter>(smileyRemover)
         studentNumberET.filters = arrayOf<InputFilter>(smileyRemover)
@@ -163,231 +163,241 @@ class SignupActivity : BaseActivity() {
 
         val cal = Calendar.getInstance()
 
-        val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-            cal.set(Calendar.YEAR, year)
-            cal.set(Calendar.MONTH, monthOfYear)
-            cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+        val dateSetListener =
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, monthOfYear)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-            val myFormat = "dd/MM/yyyy" // mention the format you need
-            val sdf = SimpleDateFormat(myFormat, Locale.US)
-            dobET.setText(sdf.format(cal.time))
-        }
+                val myFormat = "dd/MM/yyyy" // mention the format you need
+                val sdf = SimpleDateFormat(myFormat, Locale.US)
+                dobET.setText(sdf.format(cal.time))
+            }
 
         dobET.setOnClickListener {
-            val datePicker = DatePickerDialog(this@SignupActivity, dateSetListener,
+            val datePicker = DatePickerDialog(
+                this@SignupActivity, dateSetListener,
                 cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
-                cal.get(Calendar.DAY_OF_MONTH))
+                cal.get(Calendar.DAY_OF_MONTH)
+            )
             datePicker.getDatePicker().setMaxDate(System.currentTimeMillis());
             datePicker.show()
         }
 
 
         nameET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 nameTIL.error = null
         }
 
         studentNumberET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 studentNumberTIL.error = null
         }
 
         educationalPathET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 educationalPathTIL.error = null
         }
 
         emailIdET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 emailIdTIL.error = null
         }
 
         contactNumberET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 contactNumberTIL.error = null
         }
 
         identificationNumberET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 identificationNumberTIL.error = null
         }
 
         dobET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 dobTIL.error = null
         }
 
         emirateIdET.doAfterTextChanged {
-            if (it.toString().isNotEmpty() || it.toString().length >= 15)
+            if (it.toString().trim().isNotEmpty() || it.toString().trim().length >= 15)
                 emirateIdTIL.error = null
-            else if (it.toString().length < 15)
+            else if (it.toString().trim().length < 15)
                 emirateIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
         }
 
         residentialAreaET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 residentialAreaTIL.error = null
         }
 
         passwordET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 passwordTIL.error = null
         }
 
         confirmPasswordET.doAfterTextChanged {
-            if (it.toString().isNotEmpty())
+            if (it.toString().trim().isNotEmpty())
                 confirmPasswordTIL.error = null
         }
 
         school_name_spinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 schoolNameTIL.error = null
             }
         }
 
         classSpinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 classTIL.error = null
             }
         }
 
         intrestSpinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 intrestTIL.error = null
             }
         }
 
         arabicSpinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 arabicTIL.error = null
             }
         }
 
         englishSpinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 englishTIL.error = null
             }
         }
 
         mathsSpinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 mathsTIL.error = null
             }
         }
 
         chemistrySpinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 chemistryTIL.error = null
             }
         }
 
         physicsSpinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 physicsTIL.error = null
             }
         }
 
         biologySpinner.setOnItemClickListener { adapterView, view, i, l ->
-            if (adapterView.getItemAtPosition(i).toString().isNotEmpty()) {
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
                 biologyTIL.error = null
             }
         }
 
         btn_signup.setOnClickListener {
             if (isValidInput()) {
-                Toast.makeText(this, "Valid input", Toast.LENGTH_LONG).show()
-                val signUpModel = SignupModel()
-                signUpModel.name=nameET.text.toString().trim()
-                signUpModel.studentNumber=studentNumberET.text.toString().trim()
-                signUpModel.schoolName=school_name_spinner.text.toString().trim()
-                signUpModel.educationalPath=educationalPathET.text.toString().trim()
-                signUpModel.className=classSpinner.text.toString().trim()
-                signUpModel.contactNumber=contactNumberET.text.toString().trim()
-                signUpModel.identificationNumber=identificationNumberET.text.toString().trim()
-                signUpModel.dob=dobET.text.toString().trim()
-                signUpModel.emailId=emailIdET.text.toString().trim()
-                signUpModel.intrest=intrestSpinner.text.toString().trim()
-                signUpModel.emirateId=emirateIdET.text.toString().trim()
-                signUpModel.residentialArea=residentialAreaET.text.toString().trim()
-                signUpModel.password=passwordET.text.toString().trim()
-                signUpModel.arabic=arabicSpinner.text.toString().trim()
-                signUpModel.english=englishSpinner.text.toString().trim()
-                signUpModel.maths=mathsSpinner.text.toString().trim()
-                signUpModel.chemistry=chemistrySpinner.text.toString().trim()
-                signUpModel.physics=physicsSpinner.text.toString().trim()
-                signUpModel.biology=biologySpinner.text.toString().trim()
-
-               Log.w("Success","Sign up request ::::: "+ Gson().toJson(signUpModel).toString())
-                showProgress(resources.getString(R.string.signup_progress))
-                val request = ServiceBuilder.buildService(ApiInterface::class.java)
-                val call = request.register(nameET.text.toString(), studentNumberET.text.toString(),
-                    school_name_spinner.text.toString(), educationalPathET.text.toString(),
-                    classSpinner.text.toString(), contactNumberET.text.toString(),
-                    identificationNumberET.text.toString(), dobET.text.toString(),
-                    emailIdET.text.toString(), intrestSpinner.text.toString(),
-                    emirateIdET.text.toString(), residentialAreaET.text.toString(),
-                    passwordET.text.toString(), arabicSpinner.text.toString(),
-                    englishSpinner.text.toString(), mathsSpinner.text.toString(),
-                    chemistrySpinner.text.toString(), physicsSpinner.text.toString(),
-                    biologySpinner.text.toString())
-                call.enqueue(object : retrofit2.Callback<ResponseBody> {
-                    override fun onResponse(
-                        call: Call<ResponseBody>,
-                        response: Response<ResponseBody>
-                    ) {
-                        hideProgress()
-                        if (response.isSuccessful) {
-                            var str_response = response.body()!!.string()
-                            //creating json object
-                            val json: JSONObject = JSONObject(str_response)
-                            Log.w("Success", "json_contact :::: " + json.toString())
-                            Toast.makeText(
-                                this@SignupActivity,
-                                json.getString("msg"),
-                                Toast.LENGTH_LONG
-                            ).show()
-                            if (json.getBoolean("status")) {
-                                SessionManager.storeSessionStringvalue(applicationContext,
-                                    AppConstant.LOGIN_SESSION_NAME,
-                                    AppConstant.LOGIN_SESSION_USER_ID,emirateIdET.text.toString())
-                                callRegisterActivity()
-                            } else {
+                if (NetworkHelper.isOnline(applicationContext)) {
+                    showProgress(resources.getString(R.string.signup_progress))
+                    val request = ServiceBuilder.buildService(ApiInterface::class.java)
+                    val call = request.register(
+                        nameET.text.toString().trim(),
+                        studentNumberET.text.toString().trim(),
+                        school_name_spinner.text.toString().trim(),
+                        educationalPathET.text.toString().trim(),
+                        classSpinner.text.toString().trim(),
+                        contactNumberET.text.toString().trim(),
+                        identificationNumberET.text.toString().trim(),
+                        dobET.text.toString().trim(),
+                        emailIdET.text.toString().trim(),
+                        intrestSpinner.text.toString().trim(),
+                        emirateIdET.text.toString().trim(),
+                        residentialAreaET.text.toString().trim(),
+                        passwordET.text.toString().trim(),
+                        arabicSpinner.text.toString().trim(),
+                        englishSpinner.text.toString().trim(),
+                        mathsSpinner.text.toString().trim(),
+                        chemistrySpinner.text.toString().trim(),
+                        physicsSpinner.text.toString().trim(),
+                        biologySpinner.text.toString().trim()
+                    )
+                    call.enqueue(object : retrofit2.Callback<ResponseBody> {
+                        override fun onResponse(
+                            call: Call<ResponseBody>,
+                            response: Response<ResponseBody>
+                        ) {
+                            hideProgress()
+                            if (response.isSuccessful) {
+                                var str_response = response.body()!!.string()
+                                //creating json object
+                                val json: JSONObject = JSONObject(str_response)
+                                Log.w("Success", "json_contact :::: " + json.toString().trim())
+                                Toast.makeText(
+                                    this@SignupActivity,
+                                    json.getString("msg"),
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                if (json.getBoolean("status")) {
+                                    SessionManager.storeSessionStringvalue(
+                                        applicationContext,
+                                        AppConstant.LOGIN_SESSION_NAME,
+                                        AppConstant.LOGIN_SESSION_USER_ID,
+                                        emirateIdET.text.toString().trim()
+                                    )
+                                    callRegisterActivity()
+                                } else {
+                                    showFailureDataDialog()
+                                }
                             }
                         }
-                    }
 
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        Log.e("error", t.localizedMessage)
-                        hideProgress()
-                    }
-                })
-                //finish()
+                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                            Log.e("error", t.localizedMessage)
+                            hideProgress()
+                        }
+                    })
+                    //finish()
+                }else{
+                    showNoNetworkDialog()
+                }
             }
         }
+
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        this.startActivity(intent)
+        finish()
     }
 
     fun isValidInput(): Boolean {
-        if (nameET.text.toString().isEmpty() && studentNumberET.text.toString()
-                .isEmpty() && school_name_spinner.text.toString().isEmpty() &&
-            educationalPathET.text.toString().isEmpty() && classSpinner.text.toString()
-                .isEmpty() && emailIdET.text.toString().isEmpty() &&
-            contactNumberET.text.toString().isEmpty() && identificationNumberET.text.toString()
-                .isEmpty() && dobET.text.toString().isEmpty() &&
-            intrestSpinner.text.toString().isEmpty() && emirateIdET.text.toString()
-                .isEmpty() && residentialAreaET.text.toString().isEmpty() &&
-            passwordET.text.toString().isEmpty() && confirmPasswordET.text.toString()
-                .isEmpty() && arabicSpinner.text.toString().isEmpty() &&
-            englishSpinner.text.toString().isEmpty() && mathsSpinner.text.toString()
-                .isEmpty() && chemistrySpinner.text.toString().isEmpty() &&
-            physicsSpinner.text.toString().isEmpty() && biologySpinner.text.toString().isEmpty()
+        if (nameET.text.toString().trim().isEmpty() && studentNumberET.text.toString().trim()
+                .isEmpty() && school_name_spinner.text.toString().trim().isEmpty() &&
+            educationalPathET.text.toString().trim().isEmpty() && classSpinner.text.toString()
+                .trim()
+                .isEmpty() && emailIdET.text.toString().trim().isEmpty() &&
+            contactNumberET.text.toString().trim()
+                .isEmpty() && identificationNumberET.text.toString().trim()
+                .isEmpty() && dobET.text.toString().trim().isEmpty() &&
+            intrestSpinner.text.toString().trim().isEmpty() && emirateIdET.text.toString().trim()
+                .isEmpty() && residentialAreaET.text.toString().trim().isEmpty() &&
+            passwordET.text.toString().trim().isEmpty() && confirmPasswordET.text.toString().trim()
+                .isEmpty() && arabicSpinner.text.toString().trim().isEmpty() &&
+            englishSpinner.text.toString().trim().isEmpty() && mathsSpinner.text.toString().trim()
+                .isEmpty() && chemistrySpinner.text.toString().trim().isEmpty() &&
+            physicsSpinner.text.toString().trim().isEmpty() && biologySpinner.text.toString().trim()
+                .isEmpty()
         ) {
             nameTIL.error = resources.getString(R.string.fill_name)
-            studentNumberTIL.error =resources.getString(R.string.fill_student_number)
+            studentNumberTIL.error = resources.getString(R.string.fill_student_number)
             schoolNameTIL.error = resources.getString(R.string.fill_schl_name)
             educationalPathTIL.error = resources.getString(R.string.fill_edu_path)
             classTIL.error = resources.getString(R.string.select_class)
-            emailIdTIL.error =resources.getString(R.string.fill_email_id)
+            emailIdTIL.error = resources.getString(R.string.fill_email_id)
             contactNumberTIL.error = resources.getString(R.string.fill_contact_num)
             identificationNumberTIL.error = resources.getString(R.string.fill_identifiction_num)
             dobTIL.error = resources.getString(R.string.fill_dob)
@@ -403,90 +413,95 @@ class SignupActivity : BaseActivity() {
             physicsTIL.error = resources.getString(R.string.select_physics)
             biologyTIL.error = resources.getString(R.string.select_biology)
             return false
-        } else if (nameET.text.toString().isEmpty() || studentNumberET.text.toString()
-                .isEmpty() || school_name_spinner.text.toString().isEmpty() ||
-            educationalPathET.text.toString().isEmpty() || classSpinner.text.toString()
-                .isEmpty() || emailIdET.text.toString().isEmpty() ||
-            contactNumberET.text.toString().isEmpty() || identificationNumberET.text.toString()
-                .isEmpty() || dobET.text.toString().isEmpty() ||
-            intrestSpinner.text.toString().isEmpty() || emirateIdET.text.toString()
-                .isEmpty() || residentialAreaET.text.toString().isEmpty() ||
-            passwordET.text.toString().isEmpty() || confirmPasswordET.text.toString()
-                .isEmpty() || arabicSpinner.text.toString().isEmpty() ||
-            englishSpinner.text.toString().isEmpty() || mathsSpinner.text.toString()
-                .isEmpty() || chemistrySpinner.text.toString().isEmpty() ||
-            physicsSpinner.text.toString().isEmpty() || biologySpinner.text.toString().isEmpty()
+        } else if (nameET.text.toString().trim().isEmpty() || studentNumberET.text.toString().trim()
+                .isEmpty() || school_name_spinner.text.toString().trim().isEmpty() ||
+            educationalPathET.text.toString().trim().isEmpty() || classSpinner.text.toString()
+                .trim()
+                .isEmpty() || emailIdET.text.toString().trim().isEmpty() ||
+            contactNumberET.text.toString().trim()
+                .isEmpty() || identificationNumberET.text.toString().trim()
+                .isEmpty() || dobET.text.toString().trim().isEmpty() ||
+            intrestSpinner.text.toString().trim().isEmpty() || emirateIdET.text.toString().trim()
+                .isEmpty() || residentialAreaET.text.toString().trim().isEmpty() ||
+            passwordET.text.toString().trim().isEmpty() || confirmPasswordET.text.toString().trim()
+                .isEmpty() || arabicSpinner.text.toString().trim().isEmpty() ||
+            englishSpinner.text.toString().trim().isEmpty() || mathsSpinner.text.toString().trim()
+                .isEmpty() || chemistrySpinner.text.toString().trim().isEmpty() ||
+            physicsSpinner.text.toString().trim().isEmpty() || biologySpinner.text.toString().trim()
+                .isEmpty()
         ) {
 
-            if (nameET.text.toString().isEmpty()) {
+            if (nameET.text.toString().trim().isEmpty()) {
                 nameTIL.error = resources.getString(R.string.fill_name)
             }
-            if (studentNumberET.text.toString().isEmpty()) {
-                studentNumberTIL.error =resources.getString(R.string.fill_student_number)
+            if (studentNumberET.text.toString().trim().isEmpty()) {
+                studentNumberTIL.error = resources.getString(R.string.fill_student_number)
             }
-            if (school_name_spinner.text.toString().isEmpty()) {
+            if (school_name_spinner.text.toString().trim().isEmpty()) {
                 schoolNameTIL.error = resources.getString(R.string.fill_schl_name)
             }
-            if (educationalPathET.text.toString().isEmpty()) {
+            if (educationalPathET.text.toString().trim().isEmpty()) {
                 educationalPathTIL.error = resources.getString(R.string.fill_edu_path)
             }
-            if (classSpinner.text.toString().isEmpty()) {
+            if (classSpinner.text.toString().trim().isEmpty()) {
                 classTIL.error = resources.getString(R.string.select_class)
             }
-            if (emailIdET.text.toString().isEmpty()) {
-                emailIdTIL.error =resources.getString(R.string.fill_email_id)
+            if (emailIdET.text.toString().trim().isEmpty()) {
+                emailIdTIL.error = resources.getString(R.string.fill_email_id)
             }
-            if (contactNumberET.text.toString().isEmpty()) {
+            if (contactNumberET.text.toString().trim().isEmpty()) {
                 contactNumberTIL.error = resources.getString(R.string.fill_contact_num)
             }
-            if (identificationNumberET.text.toString().isEmpty()) {
+            if (identificationNumberET.text.toString().trim().isEmpty()) {
                 identificationNumberTIL.error = resources.getString(R.string.fill_identifiction_num)
             }
-            if (dobET.text.toString().isEmpty()) {
+            if (dobET.text.toString().trim().isEmpty()) {
                 dobTIL.error = resources.getString(R.string.fill_dob)
             }
-            if (intrestSpinner.text.toString().isEmpty()) {
+            if (intrestSpinner.text.toString().trim().isEmpty()) {
                 intrestTIL.error = resources.getString(R.string.fill_interest)
             }
-            if (emirateIdET.text.toString().isEmpty()) {
+            if (emirateIdET.text.toString().trim().isEmpty()) {
                 emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
             }
-            if (residentialAreaET.text.toString().isEmpty()) {
+            if (residentialAreaET.text.toString().trim().isEmpty()) {
                 residentialAreaTIL.error = resources.getString(R.string.fill_residential_area)
             }
-            if (passwordET.text.toString().isEmpty()) {
+            if (passwordET.text.toString().trim().isEmpty()) {
                 passwordTIL.error = resources.getString(R.string.fill_password)
             }
-            if (confirmPasswordET.text.toString().isEmpty()) {
+            if (confirmPasswordET.text.toString().trim().isEmpty()) {
                 confirmPasswordTIL.error = resources.getString(R.string.fill_confirm_password)
             }
-            if (arabicSpinner.text.toString().isEmpty()) {
+            if (arabicSpinner.text.toString().trim().isEmpty()) {
                 arabicTIL.error = resources.getString(R.string.select_arabic)
             }
-            if (englishSpinner.text.toString().isEmpty()) {
+            if (englishSpinner.text.toString().trim().isEmpty()) {
                 englishTIL.error = resources.getString(R.string.select_english)
             }
-            if (mathsSpinner.text.toString().isEmpty()) {
+            if (mathsSpinner.text.toString().trim().isEmpty()) {
                 mathsTIL.error = resources.getString(R.string.select_maths)
             }
-            if (chemistrySpinner.text.toString().isEmpty()) {
+            if (chemistrySpinner.text.toString().trim().isEmpty()) {
                 chemistryTIL.error = resources.getString(R.string.select_chemistry)
             }
-            if (physicsSpinner.text.toString().isEmpty()) {
+            if (physicsSpinner.text.toString().trim().isEmpty()) {
                 physicsTIL.error = resources.getString(R.string.select_physics)
             }
-            if (biologySpinner.text.toString().isEmpty()) {
+            if (biologySpinner.text.toString().trim().isEmpty()) {
                 biologyTIL.error = resources.getString(R.string.select_biology)
             }
             return false
         } else {
-            if (emirateIdET.text.toString().length < 15) {
+            if (emirateIdET.text.toString().trim().length < 15) {
                 emirateIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
                 return false
-            } else if (confirmPasswordET.text.toString() != passwordET.text.toString()) {
+            } else if (confirmPasswordET.text.toString().trim() != passwordET.text.toString()
+                    .trim()
+            ) {
                 confirmPasswordTIL.error = resources.getString(R.string.fill_valid_confirm_password)
                 return false
-            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailIdET.text.toString().trim())
+            } else if (!Patterns.EMAIL_ADDRESS.matcher(emailIdET.text.toString().trim().trim())
                     .matches()
             ) {
                 emailIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
@@ -500,5 +515,58 @@ class SignupActivity : BaseActivity() {
         val intent = Intent(this, DashboardActivity::class.java)
         this.startActivity(intent)
         finish()
+    }
+
+    private fun fetchSchool() {
+        if (NetworkHelper.isOnline(applicationContext)) {
+            showProgress(resources.getString(R.string.school_progress))
+            val request = ServiceBuilder.buildService(ApiInterface::class.java)
+            val call = request.FetchSchool()
+            call.enqueue(object : retrofit2.Callback<ResponseBody> {
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+                    hideProgress()
+                    if (response.isSuccessful) {
+                        var str_response = response.body()!!.string()
+                        //creating json object
+                        val json = JSONObject(str_response)
+                        Log.w("Success", "json_contact :::: " + json.toString())
+                        if (json.getBoolean("status")) {
+                            val jsonArray = json.getJSONArray("data")
+                            Log.w("Success", "jsonArray length ::: " + jsonArray.length())
+                            for (i in 0 until jsonArray.length()) {
+                                val jsonObject = jsonArray.getJSONObject(i)
+                                if (selectedLang == AppConstant.LANGUAGE_ARABIC) {
+                                    schoolNameArray.add(jsonObject.getString("name_ar"))
+                                } else {
+                                    schoolNameArray.add(jsonObject.getString("name"))
+                                }
+
+                                val schoolAdapter =
+                                    SpinnerAdapter(applicationContext, schoolNameArray.toList())
+                                school_name_spinner.setAdapter(schoolAdapter)
+                            }
+                        } else {
+                            val schoolNameArray =
+                                resources.getStringArray(R.array.school_name_array).toList()
+                            val schoolAdapter = SpinnerAdapter(applicationContext, schoolNameArray)
+                            school_name_spinner.setAdapter(schoolAdapter)
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Log.e("error", t.localizedMessage)
+                    hideProgress()
+                }
+            })
+        } else {
+            val schoolNameArray = resources.getStringArray(R.array.school_name_array).toList()
+            val schoolAdapter = SpinnerAdapter(applicationContext, schoolNameArray)
+            school_name_spinner.setAdapter(schoolAdapter)
+        }
+
     }
 }
