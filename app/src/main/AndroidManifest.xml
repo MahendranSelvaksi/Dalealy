@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EYA">
         <activity
+            android:name=".question.JobsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".question.FutureJobsActivity"
+            android:exported="false" />
+        <activity
             android:name=".question.SkillsActivity"
             android:exported="false" />
         <activity

@@ -10,21 +10,26 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.emirate.youth.eya.R
-import com.emirate.youth.eya.utils.model.LoginModel
 import com.emirate.youth.eya.utils.model.SkillsCatModel
+import android.widget.Toast
 
-class SkillsAdapters(
-    var mContext: Activity
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+import android.widget.CompoundButton
+import com.emirate.youth.eya.utils.SpinnerListener
+
+
+class JobsAdapter(var mContext: Activity,var mSpinnerListener: SpinnerListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var skillsList = ArrayList<SkillsCatModel>()
+    var checkedItemCount = 0
+
+
     private fun getLayoutInflater(parent: ViewGroup, layout: Int): View {
         return LayoutInflater.from(
             parent.context
         ).inflate(layout, parent, false)
     }
 
-    fun setItems(subItemList: List<SkillsCatModel>?) {
+    fun setItems(subItemList: List<SkillsCatModel>?,checkedItemCount:Int) {
         skillsList.clear()
         subItemList?.let {
             Log.w("Success", "subItemList :::: " + subItemList.size)
@@ -32,27 +37,28 @@ class SkillsAdapters(
             Log.e("ItemsList", it.toString())
         }
         Log.e("itemsize", "setItems:{${skillsList.size}}")
+        this.checkedItemCount=checkedItemCount
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return UniversityHolder(
+        return JobHolder(
             getLayoutInflater(
                 parent,
-                R.layout.university_list_adapter
+                R.layout.jobs_adapter
             )
         )
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is UniversityHolder) {
-            holder.uniNameTV.text = skillsList[position].skill.toString()
-            holder.linkTV.visibility = View.GONE
-            holder.uniNameTV.setTextColor(ContextCompat.getColor(
+        if (holder is JobHolder) {
+            holder.jobNameTV.text = skillsList[position].skill.toString()
+            holder.jobNameTV.setTextColor(ContextCompat.getColor(
                 mContext,
                 R.color.white
             ))
-            when ( skillsList[position].category) {
+            holder.tickBox.isChecked = skillsList[position].isChecked==true
+            when (skillsList[position].category) {
                 1 -> {
                     holder.cardView.setCardBackgroundColor(
                         ContextCompat.getColor(
@@ -86,6 +92,10 @@ class SkillsAdapters(
                     )
                 }
             }
+
+            holder.tickBox.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+                skillsList[position].isChecked=isChecked
+            })
         }
     }
 
@@ -93,14 +103,12 @@ class SkillsAdapters(
         return skillsList.size
     }
 
-    class UniversityHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val uniNameTV: AppCompatTextView = itemView.findViewById(R.id.uniNameTV)
-        val linkTV: AppCompatTextView = itemView.findViewById(R.id.linkTV)
+    class JobHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val jobNameTV: AppCompatTextView = itemView.findViewById(R.id.jobNameTV)
+        val tickBox: androidx.appcompat.widget.AppCompatCheckBox = itemView.findViewById(R.id.tickBox)
         val cardView: CardView = itemView.findViewById(R.id.cardView)
     }
 
 
-    interface NavigateBrowserListener {
-        abstract fun navigateToBrowser(value: String, position: Int)
-    }
+
 }

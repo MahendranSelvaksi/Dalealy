@@ -3,6 +3,7 @@ package com.emirate.youth.eya.question
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -18,6 +19,7 @@ import com.emirate.youth.eya.utils.SpinnerListener
 import com.emirate.youth.eya.utils.model.QuestionModel
 import com.emirate.youth.eya.utils.network.ApiInterface
 import com.emirate.youth.eya.utils.network.ServiceBuilder
+import kotlinx.android.synthetic.main.common_toolbar.*
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
@@ -25,6 +27,11 @@ import retrofit2.Response
 import java.util.*
 
 class Question4Activity : BaseActivity(), SpinnerListener {
+
+
+    var cat1Score:String= ""
+    var cat2Score:String= ""
+    var cat3Score:String= ""
 
     var questionList = mutableListOf<QuestionModel>()
     var mQuestionAdapter = QuestionAdapter(this, this)
@@ -34,14 +41,15 @@ class Question4Activity : BaseActivity(), SpinnerListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
 
+        cat1Score = intent.getStringExtra("cat1Score").toString()
+        cat2Score = intent.getStringExtra("cat2Score").toString()
+        cat3Score = intent.getStringExtra("cat3Score").toString()
+
         if (getSupportActionBar() != null) {
             getSupportActionBar()!!.hide();
         }
 
-        val logout =
-            findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.logout)
-        val language =
-            findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.language)
+        language.visibility= View.GONE
         commonTitle.text=resources.getString(R.string.questions_title)
 
         val mRecyclerView = findViewById<RecyclerView>(R.id.mRecyclerView)
@@ -75,23 +83,30 @@ class Question4Activity : BaseActivity(), SpinnerListener {
     private fun showMarksDialog(mark: String) {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.success)
-        val value = String.format("%s %s %s \n %s ", resources.getString(R.string.congrats), mark,resources.getString(R.string.score),resources.getString(R.string.leader_name_cat_1))
+        val value = String.format("%s",resources.getString(R.string.leader_name_cat_4))
 
         builder.setMessage(value)
         builder.setPositiveButton(
             R.string.ok
         ) { dialog, which -> // do something like...
-            if (mark.toInt()>60) {
-                val intent = Intent(this, SkillsActivity::class.java)
-                intent.putExtra("PageNumber", 4)
-                this.startActivity(intent)
-                finish()
-            }else{
-                val intent = Intent(this, Question2Activity::class.java)
-                this.startActivity(intent)
-                finish()
-                Toast.makeText(this,R.string.upto_mark_msg, Toast.LENGTH_LONG).show()
+            val list= ArrayList<Int>()
+            if (cat1Score.trim().toInt()>60){
+                list.add(1)
             }
+            if (cat2Score.trim().toInt()>60){
+                list.add(2)
+            }
+            if (cat3Score.trim().toInt()>60){
+                list.add(3)
+            }
+            if (mark.trim().toInt()>60){
+                list.add(4)
+            }
+
+            val intent = Intent(this, SkillsActivity::class.java)
+            intent.putIntegerArrayListExtra("listOfSkills",list)
+            this.startActivity(intent)
+            finish()
         }
 
         // create and show the alert dialog

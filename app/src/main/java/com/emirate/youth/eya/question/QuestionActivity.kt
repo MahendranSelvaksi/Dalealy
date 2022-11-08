@@ -72,34 +72,27 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
         fetchQuestions()
 
         btn_submit.setOnClickListener {
-            if (isAllQuestionAnswered()) {
+           // if (isAllQuestionAnswered()) {
                 showMarksDialog(calculateTheMarks().toString())
-            } else {
+            /*} else {
                 Toast.makeText(this, R.string.fill_all_questions, Toast.LENGTH_LONG).show()
-            }
+            }*/
         }
     }
 
     private fun showMarksDialog(mark: String) {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.success)
-        val value = String.format("%s %s %s \n %s ", resources.getString(R.string.congrats), mark,resources.getString(R.string.score),resources.getString(R.string.leader_name_cat_1))
+        val value = String.format("%s ",resources.getString(R.string.leader_name_cat_1))
 
         builder.setMessage(value)
         builder.setPositiveButton(
             R.string.ok
-        ) { dialog, which -> // do something like...
-            if (mark.toInt()>60) {
-                val intent = Intent(this, SkillsActivity::class.java)
-                intent.putExtra("PageNumber", 1)
-                this.startActivity(intent)
-                finish()
-            }else{
+        ) { dialog, which ->
                 val intent = Intent(this, Question2Activity::class.java)
+                intent.putExtra("cat1Score", mark)
                 this.startActivity(intent)
                 finish()
-                Toast.makeText(this,R.string.upto_mark_msg,Toast.LENGTH_LONG).show()
-            }
         }
 
         val dialog: AlertDialog = builder.create()

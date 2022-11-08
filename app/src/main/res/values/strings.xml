@@ -283,7 +283,792 @@
         <item>Careful and seeks safety</item>
     </string-array>
 
-    <string name="skill">Skill for Student</string>
+    <string name="skill">Skills for Student</string>
+    <string name="future_jobs">Future Jobs</string>
+    <string name="future_jobs_key_title">Area of Future Jobs</string>
 
 
+
+    <string-array name="key_for_future_jobs_of_cat_1">
+        <item>Seventh: The functions of the blockchain</item>
+        <item>Eighth: 3D printing functions</item>
+        <item>Ninth: The functions of cryptocurrencies</item>
+        <item> Tenth: Functions of sensor systems</item>
+        <item>Eleven: Functions of Genomic Medicine</item>
+        <item> Seventeen: Quantum computing functions</item>
+    </string-array>
+
+    <string-array name="index_for_future_jobs_of_cat_1">
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>17</item>
+    </string-array>
+
+
+    <string-array name="future_jobs_for_cat_1">
+        <item>Robots user interface and user experience experts.</item>
+        <item>Eighth: 3D printing functions User interface design Eighth: 3D printing functions User interface design.</item>
+        <item>Consultants in observing the ethics of building robots.</item>
+        <item>Robotics business developers.</item>
+        <item>Plastic surgeon for robotics.</item>
+        <item>Data scientists.</item>
+        <item> Drone designers.</item>
+        <item> Drone programmers.</item>
+        <item> Specialists in promoting mental health.</item>
+        <item>Anti-aging specialists.</item>
+        <item> Specialists in the field of neurostimulation of the brain.</item>
+        <item> Designers and engineers in the field of genetic modification.</item>
+        <item> Artificial intelligence experts with intelligence capabilities.</item>
+        <item>artificial.</item>
+        <item>Designed to develop and improve the occupant experience in vehicle use.</item>
+        <item>Blockchain designers.</item>
+        <item>Architectural designers for digital homes.</item>
+        <item> 3D product designers.</item>
+        <item>Researchers in materials science, computing, and biotechnology.</item>
+        <item>Code developers and programmers.</item>
+        <item>Sensors and systems designers.</item>
+        <item>Researchers in Algorithmic Health Services.</item>
+        <item>Nutrition experts using algorithms.</item>
+        <item>Organ designers in the field of biomanufacturing.</item>
+        <item>Experts in micro-networks for mergers.</item>
+        <item>Fusion power plant contractors.</item>
+        <item>Architectural designers of a fusion power plant.</item>
+        <item>Explorers and surveyors of asteroids and celestial bodies.</item>
+        <item>Ground crews for mining operations from asteroids and celestial bodies.</item>
+        <item>Specialists in launching mining operations from asteroids and celestial bodies.</item>
+        <item>Scientists in the material found on asteroids and celestial bodies.</item>
+        <item>Personnel for transfers to and from asteroids and celestial bodies.</item>
+        <item>Game designers rely on mixed reality in their work.</item>
+    </string-array>
+
+    <string-array name="key_for_future_jobs_of_cat_2">
+        <item>Sixteenth: Hyperloop functions</item>
+    </string-array>
+    <string-array name="index_for_future_jobs_of_cat_2">
+        <item>16</item>
+    </string-array>
+
+    <string-array name="future_jobs_for_cat_2">
+        <item>Data investigators</item>
+        <item>UAV Command Center employees.</item>
+        <item> Aircraft systems engineers.</item>
+        <item> The ground crew of the flying taxi (unmanned).</item>
+        <item>Command center staff.</item>
+        <item>Payments and Accounting Department.</item>
+        <item>Blockchain legislators.</item>
+        <item>Blockchain engineers</item>
+        <item>Blockchain cloud application managers.</item>
+        <item>Blockchain Product Managers.</item>
+        <item> 3D drug makers.</item>
+        <item>Printed prosthetics specialists.</item>
+        <item>Specialists in the 3D industry of reconstructive surgery.</item>
+        <item>3D printing specialists for foodstuffs.</item>
+        <item>Legislators regarding digital currencies.</item>
+        <item>Digital Wealth Managers.</item>
+        <item>Space fusion planners.</item>
+        <item>Fusion power generation project managers</item>
+        <item>Managers for data analysis of asteroids and celestial bodies</item>
+        <item>Space mission planners.</item>
+        <item>Space Launch Administration.</item>
+        <item>Work teams to prepare to launch vehicles into space, prepare payload, and meteorologists</item>
+        <item>and satellite.</item>
+        <item>Supervisors rely in their work on the mixed reality.</item>
+        <item>Stem cell managers for in vitro cultured meat.</item>
+        <item>Nutritional engineers specializing in laboratory-grown meat.</item>
+        <item>Operations managers for laboratory-grown meat.</item>
+    </string-array>
+
+
+    <string-array name="key_for_future_jobs_of_cat_3">
+        <item>Second, the functions of big data</item>
+        <item>Third: the functions of drones</item>
+        <item> Fourth: health and medical jobs</item>
+        <item>Fifthly, the functions of artificial intelligence</item>
+        <item> Sixth: The functions of self-driving vehicles</item>
+        <item>  Eighteen: The functions of laboratory-grown meat</item>
+        <item> Nineteen: Intelligent Learning Functions</item>
+    </string-array>
+
+    <string-array name="index_for_future_jobs_of_cat_3">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>18</item>
+        <item>19</item>
+    </string-array>
+
+    <string-array name="future_jobs_for_cat_3">
+        <item>robot maintenance</item>
+        <item>bot monitoring</item>
+        <item>Robotics technicians</item>
+        <item>robot suppliers</item>
+        <item>Robotics programmers</item>
+        <item>Data extractors</item>
+        <item> Data Analysts</item>
+        <item> Data monitors</item>
+        <item> Drone maintenance and repair</item>
+        <item> Air security work teams</item>
+        <item> Nurses</item>
+        <item> Gene regulators</item>
+        <item> Accountants with artificial intelligence capabilities</item>
+        <item> Cyber ​​security experts with intelligence</item>
+        <item>artificial</item>
+        <item> Smart Road Engineers</item>
+        <item>Repair and maintenance</item>
+        <item>cleaning teams</item>
+        <item> Traffic Analysts</item>
+        <item>Charging station installers</item>
+        <item>Blockchain Systems Analysts</item>
+        <item>Builders for 3D houses</item>
+        <item>3D printer technicians</item>
+        <item>3D printer manufacturing and maintenance engineers</item>
+        <item>Quality and audit specialists for printed products</item>
+        <item>Digital currency bankers</item>
+        <item>Employees in the insurance sector of digital currencies</item>
+        <item>Employees in the field of cryptocurrency mining</item>
+        <item>Employees for cryptocurrency exchanges</item>
+        <item>Cryptocurrency performance analysts</item>
+        <item>Sensors and systems installers</item>
+        <item>Fabric makers and tailors rely on equipment for their work</item>
+        <item> sensor</item>
+        <item>Modelers of data for sensor systems</item>
+        <item>Sensors data transmission regulators</item>
+        <item>Signal engineers for sensor systems</item>
+        <item>Designers of sensors and their own systems</item>
+        <item>Sensors repair technicians</item>
+        <item>Biological technicians specialized in CRISPR gene editing</item>
+        <item>Engineers specializing in CRISPR gene-editing technology</item>
+        <item>CRISPR auditors</item>
+        <item>Experts in biofabrication</item>
+        <item>Fusion power plant designers</item>
+        <item>Fusion reactor engineers</item>
+        <item>Technicians to adjust integration systems</item>
+        <item>Robot operators for mining operations from asteroids and celestial bodies</item>
+        <item>Workers for metal smelting operations on asteroids and celestial bodies</item>
+        <item>Space Traffic Analysts</item>
+        <item>Observers to provide guidance for spacecraft command</item>
+        <item>Designed to advance the space visitor experience</item>
+        <item>Designed and built for blended reality experiences</item>
+        <item>Tube network designers</item>
+        <item>Construction workers for the metro network "Tube"</item>
+        <item>The command center of the metro network “Tube”</item>
+        <item>Safety engineers for the metro network “Tube”</item>
+        <item>Metro network operators "Tube"</item>
+        <item>The organizers of the movement of the metro network “Tube”</item>
+        <item>Maintenance and repair of the metro network “Tube”</item>
+        <item>Guards and monitors of the metro network “Tube”</item>
+        <item>Programmers in quantum computing</item>
+        <item>Quantum data analysts</item>
+        <item>Monitors and manages privacy in computing</item>
+        <item>Quantum</item>
+        <item>Credit managers in quantum computing</item>
+        <item>Quantum device operators</item>
+        <item>Health Monitoring for Quantum Computing</item>
+        <item>Pharmacists certified in their work on computing</item>
+        <item>Quantum</item>
+        <item>Designed for bioreactors for lab-grown meat</item>
+        <item>Laboratory grown meat designers</item>
+        <item>Quality control of laboratory-grown meat</item>
+        <item>Researchers and specialists to develop new products from cultured meat</item>
+        <item>laboratory</item>
+        <item> Specialists of innovative devices operating on the principle of the Internet of Things</item>
+        <item>Smart clothing developers operating on the principle of the Internet of Things</item>
+        <item>Health monitors according to the principle of the Internet of Things</item>
+        <item>Scientists and anthropologists according to the principle of the Internet of Things</item>
+        <item>Alarm systems specialists operating on the principle of the Internet of Things</item>
+        <item>Data security experts based on the principle of the Internet of Things</item>
+        <item>Fault point evaluators according to the principle of the Internet of Things</item>
+        <item>Designers of interactive interfaces for teaching systems based on artificial intelligence</item>
+        <item>Developers of teaching programs based on artificial intelligence</item>
+        <item>Engineers for smart teaching systems based on artificial intelligence</item>
+        <item>Technicians to repair smart teaching systems based on artificial intelligence</item>
+        <item>and its maintenance</item>
+    </string-array>
+
+
+    <string-array name="key_for_future_jobs_of_cat_4">
+        <item>Twelfth: Functions of Nuclear Fusion</item>
+        <item>Thirteen: Space Mining Jobs</item>
+        <item>Fourteenth: Jobs in the aerospace industry</item>
+    </string-array>
+    <string-array name="index_for_future_jobs_of_cat_4">
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+    </string-array>
+
+    <string-array name="future_jobs_for_cat_4">
+        <item>Developers of communication skills for robots</item>
+        <item>Travel agents for robots</item>
+        <item>Organizers of shows and events for robotics</item>
+        <item> Specialists in the value or ethical aspect of data preservation and use</item>
+        <item> Data credit agents</item>
+        <item> Data brokers</item>
+        <item> sensor operators</item>
+        <item> Drone sales agents</item>
+        <item> Seniors assistants</item>
+        <item> Epigenetic therapy specialists</item>
+        <item> Independent trainers and supervisors with intelligence capabilities</item>
+        <item>artificial</item>
+        <item> Books powered by artificial intelligence capabilities</item>
+        <item> Musicians powered by artificial intelligence</item>
+        <item> AI-powered artists</item>
+        <item>Blockchain user interface and user experience experts</item>
+        <item>Blockchain business development trainers and supervisors</item>
+        <item>Specialists for cryptocurrency transactions</item>
+        <item>Algorithm health service providers</item>
+        <item>Experts at minimizing the effects of visiting space</item>
+        <item>Aerospace Ethics Experts</item>
+        <item>Travel agents rely on mixed reality in their work</item>
+        <item>Therapists rely in their work on the mixed reality</item>
+        <item>Trainers rely in their work on the mixed reality</item>
+        <item>Film producers rely on mixed reality in their work</item>
+        <item>News producers rely on mixed reality in their work</item>
+        <item>Character designers rely on their work</item>
+        <item>Quantum computing</item>
+        <item>Consultants and specialists to verify the ethical and professional aspect</item>
+        <item>Educational trainers to work on educational artificial intelligence systems</item>
+        <item>Develop personal skills enhanced by artificial intelligence</item>
+        <item>Personal monitors of life augmented by artificial intelligence systems</item>
+        <item>Smart Learning Process Developers</item>
+    </string-array>
+
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_1">
+        <item>        جامعة أبوظبى  (بكالوريوس العلوم في الهندسة الكهربائية – تخصص الروبوتات والأتمتة )</item>
+        <item>        الجامعة الأمريكية في دبي  BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING</item>
+        <item>        الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   كلية الهندسة والتكنولوجيا</item>
+        <item>        الجامعة الأمريكية فى الشارقة</item>
+        <item>Accredited Programs - CAA  DIPLOMA IN ELECTRO-MECHANICAL SYSTEMS ENGINEERING TECHNOLOGY</item>
+        <item>Accredited Programs - CAA  BACHELOR OF SCIENCE IN ELECTRICAL ENGINEERING</item>
+        <item>        جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا BSc In Computer Engineering</item>
+        <item>        جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا</item>
+        <item>        كلية ليوا للتكنولوجيا : كانت سابقاً كلية الإمارات للتكنولوجيا  بكالوريوس العلوم في الهندسة الصناعية</item>
+    </string-array>
+
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_1">
+        <item>https://www.adu.ac.ae/ar</item>
+        <item>https://www.aud.edu/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.aus.edu/</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://ect.ac.ae/</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_2">
+        <item>جامعة عجمان</item>
+        <item>جامعة الشارقة   بكالوريوس العلوم في علم الحاسوب</item>
+        <item>جامعة الشارقة   BACHELOR OF SCIENCE IN BUSINESS INFORMATION SYSTEMS</item>
+        <item>كلية الخوارزمى الدولية  بكالوريوس /  تكنولوجيا المعلومات</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BS in Business Administration</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   College of Artificial Intelligence</item>
+        <item>الجامعة البريطانية فى دبي  Bachelor of Science in Computer Science – Software Engineering</item>
+        <item>Accredited Programs - CAA APPLIED BACHELOR IN INFORMATION SECURITY ENGINEERING TECHNOLOGY</item>
+        <item>Accredited Programs - CAA BACHELOR OF SCIENCE IN SOFTWARE ENGINEERING</item>
+        <item>جامعة ولونغونغ في دبي   Bachelor of Business Information Systems</item>
+        <item>جامعة ولونغونغ في دبي Bachelor of Computer Science (Cyber Security)</item>
+        <item>جامعة ولونغونغ في دبي Bachelor of Engineering (Honours) - Computer Engineering</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا BSc In Computer Engineering</item>
+        <item>معهد نيويورك للتكنولوجيا</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_2">
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://kic.ac.ae/welcome/ar/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.nyit.edu/abu_dhabi</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_3">
+        <item>جامعة أبوظبى ( العلوم في الطيران)</item>
+        <item>كلية زايد الثاني العسكرية</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   كلية الهندسة والتكنولوجيا</item>
+        <item>الجامعة البريطانية فى دبي Bachelor of Science in Electro-Mechanical Engineering</item>
+        <item>Accredited Programs - CAA APPLIED BACHELOR IN AIRCRAFT MAINTENANCE MANAGEMENT</item>
+        <item>Accredited Programs - CAA DIPLOMA IN AIR TRAFFIC MANAGEMENT</item>
+        <item>بوليتيكنيك أبوظبي  Aircraft Engineering Technology</item>
+        <item>كليات التقنية العليا  تكنولوجيا الهندسة والعلوم</item>
+        <item>جامعة الإمارات العربية المتحدة  قسم الهندسة الميكانيكية والطيران</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_3">
+        <item>https://www.adu.ac.ae/ar</item>
+        <item>https://joddor.com/%D9%83%D9%84%D9%8A%D8%A9-%D8%B2%D8%A7%D9%8A%D8%AF-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9/#i</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.adpoly.ac.ae/En/Pages/Home.aspx</item>
+        <item>https://hct.ac.ae/ar/</item>
+        <item>https://www.uaeu.ac.ae/ar/</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_4">
+        <item>جامعة عجمان</item>
+        <item>جامعة الشارقة  BACHELOR OF SCIENCE IN ENVIRONMENTAL HEALTH SCIENCES</item>
+        <item>جامعة الشارقة BACHELOR OF SCIENCE IN MEDICAL LABORATORY SCIENCES</item>
+        <item>جامعة الشارقة   العلوم الطبية الأساسية</item>
+        <item>الكلية الملكية للجراحين في إيرلندا – دبي  الصحة والطب</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   كلية الطب</item>
+        <item>Accredited Programs - CAA  BACHELOR OF SCIENCE IN PUBLIC HEALTH</item>
+        <item>كلية دبي الطبية للبنات</item>
+        <item>جامعة الخليج الطبية</item>
+        <item>جامعة الإمارات العربية المتحدة كلية الطب والعلوم الصحية</item>
+        <item>جامعة العلوم والتقنية في الفجيرة  College of Pharmacy and Health Sciences</item>
+        <item>جامعة محمد بن راشد للطب والعلوم الصحية</item>
+        <item>جامعة رأس الخيمة للطب والعلوم الصحية</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_4">
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.idp.com/uae/universities/royal-college-of-surgeons-in-ireland/iid-ie-01122/?lang=ar</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.dmcg.edu/</item>
+        <item>https://gmu.ac.ae/?gclid=Cj0KCQjwxb2XBhDBARIsAOjDZ36RzzRfIqWNWXK3N</item>
+        <item>https://www.uaeu.ac.ae/ar/</item>
+        <item>https://ustf.ac.ae/ar.html</item>
+        <item>https://www.mbru.ac.ae/</item>
+        <item>https://www.rakmhsu.ac.ae/</item>
+    </string-array>
+
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_5">
+<item>جامعة عجمان</item>
+        <item>الجامعة الأمريكية في دبي BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING</item>
+        <item>الجامعة الأمريكية في رأس الخيمة    Bachelor of Science in Artificial Intelligence</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   College of Artificial Intelligence</item>
+        <item>الجامعة البريطانية فى دبي  Bachelor’s in Computer Science and Artificial Intelligence</item>
+        <item>Accredited Programs - CAA  APPLIED BACHELOR IN ELECTRO-MECHANICAL SYSTEMS ENGINEERING TECHNOLOGY</item>
+        <item>بوليتيكنيك أبوظبيInformation Security Engineering Technology</item>
+        <item>معهد نيويورك للتكنولوجيا  </item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا Minor In Artificial Intelligence</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_5">
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.aud.edu/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.adpoly.ac.ae/En/Pages/Home.aspx</item>
+        <item>https://www.nyit.edu/abu_dhabi</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_6">
+        <item>جامعة عجمان</item>
+        <item>الجامعة البريطانية فى دبي Bachelor of Science in Electro-Mechanical Engineering</item>
+<item>كليات التقنية العليا  تكنولوجيا الهندسة والعلوم</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   كلية الهندسة والتكنولوجيا</item>
+        <item>كلية ليوا للتكنولوجيا : كانت سابقاً كلية الإمارات للتكنولوجيا بكالوريوس العلوم في الهندسة الميكانيكية</item>
+        <item>الجامعة البريطانية فى دبي Bachelor of Science in Electro-Mechanical Engineering</item>
+        <item>جامعة الشارقة  بكالوريوس العلوم في الهندسة الكهربائية والإلكترونية</item>
+        <item>بوليتيكنيك أبوظبي  Aircraft Engineering Technology</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_6">
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://hct.ac.ae/ar/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://ect.ac.ae/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.adpoly.ac.ae/En/Pages/Home.aspx</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_7">
+        <item>جامعة الشارقة   بكالوريوس العلوم في هندسة الحاسوب</item>
+        <item>جامعة زايد  كلية الابتكار التقني</item>
+        <item>الجامعة الأمريكية في دبي  MMU INTERNATIONAL PROGRESSION PROGRAM</item>
+<item>الجامعة البريطانية فى دبي  Bachelor of Science in Computer Science – Software Engineering</item>
+        <item>الجامعة البريطانية فى دبي Bachelor of Science in Accounting and Finance</item>
+        <item>الجامعة الكندية في دبي</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN CYBERSECURITY ENGINEERING</item>
+        <item>جامعة ولونغونغ في دبي Bachelor of Computer Science (Cyber Security)</item>
+        <item>معهد نيويورك للتكنولوجيا</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا BSc In Computer Engineering</item>
+        <item>كلية ليوا للتكنولوجيا : كانت سابقاً كلية الإمارات للتكنولوجيا  Bachelor of Business Administration  in Business Information Technology</item>
+        <item>كلية الأفق الجامعية   بكالوريوس إدارة الأعمال في الابتكار و ريادة الأعمال</item>
+        <item>جامعة دبي Home Academics Dubai Business School</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_7">
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.zu.ac.ae/main/ar/index.asp</item>
+        <item>https://www.aud.edu/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.cud.ac.ae/ar/fees</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.nyit.edu/abu_dhabi</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://ect.ac.ae/</item>
+        <item>https://www.skylineuniversity.ac.ae/ar/</item>
+        <item>https://ud.ac.ae/</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_8">
+        <item>جامعة الشارقة الهندسة المعمارية</item>
+<item>جامعة الشارقة   بكالوريوس العلوم في تقنية المعلومات - الوسائط المتعددة</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BS in Industrial Engineering</item>
+        <item>الجامعة الأمريكية في رأس الخيمة BA in Interior Design</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   كلية الهندسة والتكنولوجيا</item>
+        <item>الجامعة الكندية في دبي</item>
+        <item>الجامعة الأمريكية فى الشارقة</item>
+        <item> Bachelor of Engineering (Honours) - Electrical Engineering</item>
+        <item>جامعة الإمارات العربية المتحدة  كلية تقنية المعلومات</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_8">
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.cud.ac.ae/ar/fees</item>
+        <item>https://www.aus.edu/</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.uaeu.ac.ae/ar/</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_9">
+<item>جامعة زايد   كـلية عـلوم الإدارة</item>
+        <item>جامعة القاسمية  كلية الاقتصاد</item>
+        <item>الجامعة الأمريكية في دبي   BACHELOR OF BUSINESS ADMINISTRATION</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BS in Business Administration (Major in Accounting)</item>
+        <item>الجامعة الأمريكية في رأس الخيمةBS in Business Administration (Major in Finance)</item>
+        <item>الجامعة البريطانية فى دبي  Bachelor of Science in Computer Science – Software Engineering</item>
+        <item>الجامعة البريطانية فى دبي Bachelor of Science in Accounting and Finance</item>
+        <item>الجامعة الأمريكية فى الشارقة</item>
+        <item>جامعة الفلاح  بكالوريوس العلوم في إدارة الأعمال - المحاسبة</item>
+        <item>جامعة ولونغونغ في دبي Bachelor of Engineering (Honours) - Computer Engineering</item>
+        <item>معهد تكنولوجيا إدارة الأعمال بدبي : أي. أم. تي  BACHELOR OF COMMERCE IN ACCOUNTANCY</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  BSc In Industrial And Systems Engineering</item>
+        <item>معهد الإمارات للدراسات المصرفية  باكلوريوس العلوم المالية والمصرفية</item>
+        <item>جامعة برمنغهام دبي</item>
+        <item>كلية ليوا للتكنولوجيا : كانت سابقاً كلية الإمارات للتكنولوجيا  Bachelor of Business Administration in Banking and Finance</item>
+        <item>كلية الأفق الجامعية  بكالوريوس إدارة الأعمال في المحاسبة والإدارة المالية</item>
+        <item>جامعة دبي BBA Accounting</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_9">
+        <item>https://www.zu.ac.ae/main/ar/index.asp</item>
+        <item>https://www.alqasimia.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.aud.edu/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.aus.edu/</item>
+        <item>https://afu.ac.ae/ar</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.caa.ae/Pages/Institutes/Details.aspx?GUID=39</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://eibfs.ae/?lang=ar</item>
+        <item>https://www.birmingham.ac.uk/dubai/index.aspx</item>
+        <item>https://ect.ac.ae/</item>
+        <item>https://www.skylineuniversity.ac.ae/ar/</item>
+        <item>https://ud.ac.ae/</item>
+    </string-array>
+
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_10">
+<item>جامعة الشارقة  بكالوريوس العلوم في الهندسة الكهربائية والإلكترونية</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BS in Electrical and Electronics Engineering</item>
+        <item>الجامعة الأمريكية في رأس الخيمة BS in Electronics &amp; Communications Engineering</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   كلية الهندسة والتكنولوجيا</item>
+        <item>الجامعة الكندية في دبي</item>
+        <item>Accredited Programs - CAA  BACHELOR OF BUSINESS ADMINISTRATION IN DIGITAL MARKETING COMMUNICATIONS</item>
+        <item>جامعة العين  بكالوريوس العلوم في هندسة الشبكات والاتصالات</item>
+        <item>جامعة ولونغونغ في دبي Bachelor of Engineering (Honours) - Telecommunications Engineering</item>
+        <item>جامعة الإمارات العربية المتحدة   قسم الهندسة الكهربائية والاتصالات</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  BSc In Electrical Engineering</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_10">
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.cud.ac.ae/ar/fees</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://aau.ac.ae/ar/</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.uaeu.ac.ae/ar/</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_11">
+        <item>جامعة أبوظبى  ( هندسة الطب الحيوية)</item>
+        <item>جامعة الشارقة  بكالوريوس العلوم في التقنيات الحيوية</item>
+        <item>جامعة الشارقة  BACHELOR OF SCIENCE IN BIOMEDICAL INFORMATICS</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN BIOMEDICAL ENGINEERING</item>
+
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_11">
+        <item>https://www.adu.ac.ae/ar</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_12">
+        <item>جامعة الشارقة  BACHELOR OF SCIENCE IN NUCLEAR ENGINEERING</item>
+        <item>بوليتيكنيك أبوظبي  Advanced Energy Engineering Technology</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  BSc In Mechanical Engineering</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا Minor In Nuclear Engineering</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_12">
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.adpoly.ac.ae/En/Pages/Home.aspx</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_13">
+<item>الجامعة الأمريكية في رأس الخيمة   BS in Chemical Engineering</item>
+        <item>الجامعة الأمريكية في رأس الخيمة BS in Mechanical Engineering</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN INDUSTRIAL ENGINEERING</item>
+        <item>Accredited Programs - CAA  BACHELOR OF SCIENCE IN MECHANICAL ENGINEERING</item>
+        <item>جامعة ولونغونغ في دبي Bachelor of Engineering (Honours) - Mechanical Engineering</item>
+        <item>بوليتيكنيك أبوظبي  Electromechanical Engineering Technology</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا   BSc In Aerospace Engineering</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  BSc In Mechanical Engineering</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_13">
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.adpoly.ac.ae/En/Pages/Home.aspx</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_14">
+<item>جامعة أبوظبى  (بكالوريوس العلوم في هندسة أمن الفضاء الإلكتروني)</item>
+        <item>الجامعة البريطانية فى دبي Bachelor of Science in Electro-Mechanical Engineering</item>
+        <item>جامعة العين  بكالوريوس العلوم في هندسة الشبكات والاتصالات</item>
+        <item>جامعة ولونغونغ في دبي Bachelor of Engineering (Honours) - Mechanical Engineering</item>
+        <item>معهد نيويورك للتكنولوجيا</item>
+        <item>جامعة نيويورك في أبو ظبي Physics</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا   BSc In Aerospace Engineering</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  BSc In Mechanical Engineering</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا BSc In Petroleum Engineering</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_14">
+        <item>https://www.adu.ac.ae/ar</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://aau.ac.ae/ar/</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.nyit.edu/abu_dhabi</item>
+        <item>https://nyuad.nyu.edu/ar/</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_15">
+<item>جامعة أبوظبى  ( هندسة البرمجيات)</item>
+        <item>جامعة عجمان</item>
+        <item>جامعة الفجيرة Bachelor of Information Technology -  Associate of Arts in Information Technology</item>
+        <item>جامعة زايد   كلية الدراسات متداخلة التخصصات</item>
+        <item>الجامعة الأمريكية في دبي BACHELOR OF SCIENCE IN COMPUTER ENGINEERING</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BA in Mass Communication</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BS in Business Administration (Major in Marketing)</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BS in Computer Engineering</item>
+        <item>معهد دبي للتصميم والابتكار</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   College of Artificial Intelligence</item>
+        <item>الجامعة البريطانية فى دبي  Bachelor’s in Computer Science and Artificial Intelligence</item>
+        <item>الجامعة الأمريكية فى الشارقة</item>
+        <item>جامعة العينبكالوريوس العلوم في هندسة البرمجيات</item>
+        <item>معهد نيويورك للتكنولوجيا</item>
+        <item>جامعة الإمارات العربية المتحدة  كلية تقنية المعلومات</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  Minor In Digital Media And Composition</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_15">
+        <item>https://www.adu.ac.ae/ar</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://uof.ac.ae/ar/</item>
+        <item>https://www.zu.ac.ae/main/ar/index.asp</item>
+        <item>https://www.aud.edu/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://didi.ac.ae/ar</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.aus.edu/</item>
+        <item>https://aau.ac.ae/ar/</item>
+        <item>https://www.nyit.edu/abu_dhabi</item>
+        <item>https://www.uaeu.ac.ae/ar/</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_16">
+<item>جامعة عجمان</item>
+        <item>جامعة الشارقة  BACHELOR OF SCIENCE IN CIVIL ENGINEERING</item>
+        <item>الجامعة الأمريكية في دبي  BACHELOR OF SCIENCE IN CIVIL ENGINEERING</item>
+        <item>الجامعة الأمريكية في رأس الخيمة BS in Civil &amp; Infrastructure Engineering</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري College of Maritime Transport and Technology</item>
+        <item>الجامعة البريطانية فى دبي Bachelor of Science in Electro-Mechanical Engineering</item>
+        <item>الجامعة الأمريكية فى الشارقة</item>
+        <item>Accredited Programs - CAA BACHELOR OF SCIENCE IN CIVIL ENGINEERING</item>
+        <item>جامعة ولونغونغ في دبي  Bachelor of Engineering (Honours) - Civil Engineering</item>
+        <item>جامعة نيويورك في أبو ظبي  Civil Engineers</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  BSc In Civil Engineering</item>
+        <item>كلية ليوا للتكنولوجيا : كانت سابقاً كلية الإمارات للتكنولوجيا  بكالوريوس العلوم في الهندسة المدنية</item>
+        <item>كلية ليوا للتكنولوجيا : كانت سابقاً كلية الإمارات للتكنولوجيا بكالوريوس العلوم في الهندسة الميكانيكية</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_16">
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.aud.edu/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.aus.edu/</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://nyuad.nyu.edu/ar/</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://ect.ac.ae/</item>
+        <item>https://ect.ac.ae/</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_17">
+        <item>جامعة أبوظبى  (هندسة  الأمن السبراني)</item>
+        <item>جامعة عجمان</item>
+        <item>جامعة الشارقة  BACHELOR OF SCIENCE IN CYBERSECURITY ENGINEERING</item>
+<item>جامعة الشارقة  BACHELOR OF SCIENCE IN CYBERSECURITY ENGINEERING</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   كلية الهندسة والتكنولوجيا</item>
+        <item>الجامعة الكندية في دبي</item>
+        <item>Accredited Programs - CAA APPLIED BACHELOR IN INFORMATION SECURITY ENGINEERING TECHNOLOGY</item>
+        <item>جامعة العين  بكالوريوس العلوم في هندسة الحاسوب</item>
+        <item>جامعة العين  بكالوريوس العلوم في أمن الفضاء الالكتروني</item>
+        <item>معهد نيويورك للتكنولوجيا</item>
+        <item>https://www.nyit.edu/abu_dhabi</item>
+        <item>كلية الأفق الجامعية بكالوريوس العلوم في تقنية المعلومات - الحوسبة المؤسسيّة</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_17">
+        <item>https://www.adu.ac.ae/ar</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://www.sharjah.ac.ae/ar/Pages/default.aspx</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.cud.ac.ae/ar/fees</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://aau.ac.ae/ar/</item>
+        <item>https://aau.ac.ae/ar/</item>
+        <item>https://www.nyit.edu/abu_dhabi</item>
+        <item>https://www.ku.ac.ae/academics</item>
+        <item>https://www.skylineuniversity.ac.ae/ar/</item>
+    </string-array>
+
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_18">
+        <item>جامعة أبوظبى  ( العلوم في الوراثة الجزئية والطبية)</item>
+<item>الجامعة الأمريكية في دبي  BACHELOR OF SCIENCE IN BIOLOGY</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BS in Biotechnology</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري كلية تكنولوجيا المصايد والاستزراع المائي</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN MOLECULAR AND MEDICAL GENETICS</item>
+        <item>معهد نيويورك للتكنولوجيا</item>
+        <item>جامعة الإمارات العربية المتحدة  كلية الزراعة والطب البيطري</item>
+        <item>جامعة خليفة وكانت سابقاً : جامعة خليفة للعلوم والتكنولوجيا  BSc In Biomedical Engineering</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_18">
+        <item>https://www.adu.ac.ae/ar</item>
+        <item>https://www.aud.edu/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.nyit.edu/abu_dhabi</item>
+        <item>https://www.uaeu.ac.ae/ar/</item>
+        <item>https://www.ku.ac.ae/academics</item>
+    </string-array>
+
+    <string-array name="name_of_the_universities_for_future_jobs_of_key_19">
+<item>جامعة أبوظبى  ( هندسة البرمجيات)</item>
+        <item>جامعة عجمان</item>
+        <item>جامعة الفجيرة Bachelor of Information Technology -  Associate of Arts in Information Technology</item>
+        <item>جامعة زايد   كلية الدراسات متداخلة التخصصات</item>
+        <item>الجامعة الأمريكية في دبي BACHELOR OF SCIENCE IN COMPUTER ENGINEERING</item>
+        <item>الجامعة الأمريكية في رأس الخيمة  BS in Computer Engineering</item>
+        <item>الأكاديمية العربية للعلوم والتكنولوجيا والنقل البحري   كلية الهندسة والتكنولوجيا</item>
+        <item>الجامعة البريطانية فى دبي  Bachelor’s in Computer Science and Artificial Intelligence</item>
+        <item>الجامعة الكندية في دبي</item>
+        <item>الجامعة الأمريكية فى الشارقة</item>
+        <item>Accredited Programs - CAA   BACHELOR OF SCIENCE IN COMPUTER ENGINEERING</item>
+        <item>Accredited Programs - CAA  BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</item>
+        <item>جامعة العين  بكالوريوس العلوم في علوم الحاسب الآلي</item>
+        <item>جامعة ولونغونغ في دبي   Bachelor of Computer Science</item>
+        <item> Bachelor of Engineering (Honours) - Electrical Engineering</item>
+        <item>كليات التقنية العليا   علوم الكمبيوتر والمعلومات</item>
+        <item>جامعة الإمارات العربية المتحدة  كلية تقنية المعلومات</item>
+        <item>جامعة نيويورك في أبو ظبي  Computer Science</item>
+        <item>جامعة العلوم والتقنية في الفجيرة College of Engineering and Technology</item>
+    </string-array>
+
+    <string-array name="link_of_the_universities_for_future_jobs_of_key_19">
+        <item>https://www.adu.ac.ae/ar</item>
+        <item>https://www.ajman.ac.ae/ar</item>
+        <item>https://uof.ac.ae/ar/</item>
+        <item>https://www.zu.ac.ae/main/ar/index.asp</item>
+        <item>https://www.aud.edu/</item>
+        <item>https://aurak.ac.ae/en/</item>
+        <item>https://aast.edu/ar/</item>
+        <item>https://www.buid.ac.ae/</item>
+        <item>https://www.cud.ac.ae/ar/fees</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://aau.ac.ae/ar/</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://www.uowdubai.ac.ae/</item>
+        <item>https://hct.ac.ae/ar/</item>
+        <item>https://www.uaeu.ac.ae/ar/</item>
+        <item>https://nyuad.nyu.edu/ar/</item>
+        <item>https://ustf.ac.ae/ar.html</item>
+    </string-array>
 </resources>

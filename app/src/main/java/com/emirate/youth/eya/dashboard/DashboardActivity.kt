@@ -1,22 +1,15 @@
 package com.emirate.youth.eya.dashboard
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.emirate.youth.eya.R
 import com.emirate.youth.eya.adapters.DashBoardAdapter
-import com.emirate.youth.eya.login.LoginActivity
-import com.emirate.youth.eya.question.Question2Activity
 import com.emirate.youth.eya.question.QuestionActivity
-import com.emirate.youth.eya.signup.SignupActivity
-import com.emirate.youth.eya.utils.*
-import com.emirate.youth.eya.utils.AppConstant.LANGUAGE_ARABIC
-import com.emirate.youth.eya.utils.AppConstant.LANGUAGE_ENGLISH
+import com.emirate.youth.eya.utils.BaseActivity
 
 class DashboardActivity : BaseActivity(), DashBoardAdapter.NavigateListerner {
 

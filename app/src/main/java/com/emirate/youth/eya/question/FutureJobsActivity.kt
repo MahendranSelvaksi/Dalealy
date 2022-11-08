@@ -1,29 +1,26 @@
 package com.emirate.youth.eya.question
 
 import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.emirate.youth.eya.R
 import com.emirate.youth.eya.adapters.SkillsAdapters
-import com.emirate.youth.eya.adapters.UniversityListAdapter
 import com.emirate.youth.eya.utils.BaseActivity
-import com.emirate.youth.eya.utils.model.LoginModel
 import com.emirate.youth.eya.utils.model.SkillsCatModel
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.common_toolbar.*
+import java.util.*
+import kotlin.collections.ArrayList
 
-class SkillsActivity : BaseActivity() {
+class FutureJobsActivity : BaseActivity() {
 
     var mSkillsAdapters = SkillsAdapters(this)
 
     var skillsList = ArrayList<SkillsCatModel>()
     var listOfSkills = ArrayList<Int>()
+    var listOfJobsKeys =  TreeSet<Int>()
+    var parentCat =  ArrayList<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +31,14 @@ class SkillsActivity : BaseActivity() {
         }
 
         listOfSkills = intent.getIntegerArrayListExtra("listOfSkills") as ArrayList<Int>
+        parentCat = intent.getIntegerArrayListExtra("parentCat") as ArrayList<Int>
+
+        listOfJobsKeys.addAll(listOfSkills)
 
         val btn_next = findViewById<Button>(R.id.btn_next)
-        commonTitle.text = resources.getString(R.string.skill)
+        commonTitle.text = resources.getString(R.string.future_jobs)
         evaluationTV.visibility = View.GONE
-        language.visibility=View.GONE
+
 
         logout.setOnClickListener {
             showLogoutDialog()
@@ -52,8 +52,9 @@ class SkillsActivity : BaseActivity() {
             finish()
         }
         btn_next.setOnClickListener {
-            val intent = Intent(this, JobsActivity::class.java)
+            val intent = Intent(this, UniversityListActivity::class.java)
             intent.putIntegerArrayListExtra("listOfSkills",listOfSkills)
+            intent.putIntegerArrayListExtra("parentCat",parentCat)
             this.startActivity(intent)
             finish()
         }
@@ -65,36 +66,40 @@ class SkillsActivity : BaseActivity() {
 
     private fun loadData() {
 
-        listOfSkills.forEachIndexed { j, data ->
+        listOfJobsKeys.forEachIndexed { j, data ->
             when (data) {
                 1 -> {
-                    resources.getStringArray(R.array.cat_1_skills).toList().forEach {
+                    resources.getStringArray(R.array.future_jobs_for_cat_1).toList().forEach {
                         val skillsCatModel = SkillsCatModel()
                         skillsCatModel.category=1
+                        skillsCatModel.parentCat=data
                         skillsCatModel.skill=it.toString().trim()
                         skillsList.add(skillsCatModel)
                     }
                 }
                 2 -> {
-                    resources.getStringArray(R.array.cat_2_skills).toList().forEach {
+                    resources.getStringArray(R.array.future_jobs_for_cat_2).toList().forEach {
                         val skillsCatModel = SkillsCatModel()
                         skillsCatModel.category=2
+                        skillsCatModel.parentCat=data
                         skillsCatModel.skill=it.toString().trim()
                         skillsList.add(skillsCatModel)
                     }
                 }
                 3 -> {
-                    resources.getStringArray(R.array.cat_3_skills).toList().forEach {
+                    resources.getStringArray(R.array.future_jobs_for_cat_3).toList().forEach {
                         val skillsCatModel = SkillsCatModel()
                         skillsCatModel.category=3
+                        skillsCatModel.parentCat=data
                         skillsCatModel.skill=it.toString().trim()
                         skillsList.add(skillsCatModel)
                     }
                 }
                 4 -> {
-                    resources.getStringArray(R.array.cat_4_skills).toList().forEach {
+                    resources.getStringArray(R.array.future_jobs_for_cat_4).toList().forEach {
                         val skillsCatModel = SkillsCatModel()
                         skillsCatModel.category=4
+                        skillsCatModel.parentCat=data
                         skillsCatModel.skill=it.toString().trim()
                         skillsList.add(skillsCatModel)
                     }
