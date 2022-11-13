@@ -13,9 +13,10 @@
     <string name="name_label">Name</string>
     <string name="student_number_label">Student number in the system</string>
     <string name="school_name_label">School name</string>
+    <string name="emirate_label">Emirate</string>
     <string name="educational_path_label">Educational path</string>
     <string name="class_label">Class</string>
-    <string name="email_id_label">Email ID</string>
+    <string name="email_id_label">Email address</string>
     <string name="contact_number_label">Contact number</string>
     <string name="identification_number_label">Identification number</string>
     <string name="date_of_birth_label">Date of Birth</string>
@@ -84,14 +85,34 @@
         <item>12</item>
     </string-array>
 
+    <string-array name="educational_stream_array">
+        <item>Advance</item>
+        <item>Elite</item>
+        <item>General</item>
+        <item>Applied</item>
+        <item>Academic</item>
+    </string-array>
+    <string-array name="emirate_array">
+        <item>Abu-Dabi</item>
+        <item> Al-Ain</item>
+        <item>Al-Dafrah</item>
+        <item>Dubai</item>
+        <item>Sharjah</item>
+        <item> Ajman</item>
+        <item> Umm-Quain</item>
+        <item>  Ras-Al-Khaimah</item>
+        <item> Fujairah</item>
+    </string-array>
+
 
     <string name="Signup">Sign up</string>
     <string name="fill_name">Please fill name</string>
+    <string name="fill_emirate">Please select Emirate</string>
     <string name="fill_student_number">Please fill Student number</string>
     <string name="fill_schl_name">Please select School name</string>
     <string name="fill_edu_path">Please fill Educational Path</string>
     <string name="select_class">Please select Class</string>
-    <string name="fill_email_id">Please fill Email ID</string>
+    <string name="fill_email_id">Please fill Email address</string>
     <string name="fill_contact_num">Please fill Contact Number</string>
     <string name="fill_identifiction_num">Please fill Identification Number</string>
     <string name="fill_dob">Please fill Date of Birth</string>
@@ -106,7 +127,7 @@
     <string name="fill_confirm_password">Please fill Confirm Password</string>
     <string name="fill_valid_confirm_password">Please fill same password</string>
 
-    <string name="valid_email_id">Please fill valid Email Id</string>
+    <string name="valid_email_id">Please fill valid Email address</string>
 
     <string name="signup_progress">Sin up progress, Please wait…</string>
     <string name="school_progress">School data loading, Please wait…</string>
@@ -161,7 +182,8 @@
     <string name="score">score</string>
     <string name="congrats">You are achieved </string>
     <string name="question_data_load_msg">Question data loading, Please wait…</string>
-    <string name="upto_mark_msg">You are mark is not up to the 60. Please answer next category questions.</string>
+    <string name="upto_mark_msg">You are grade is not up to the 60. Please answer next category questions.</string>
+    <string name="not_elgible_leader_msg">You are not eligible for a leader.</string>
 
 
     <string name="ke_title">Knowledge Extension</string>

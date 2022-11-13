@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".splash.SplashActivity">
 
     <include layout="@layout/common_toolbar" />
@@ -30,16 +30,19 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/name_label"
-              >
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:hint="@string/name_label">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
                     android:inputType="textPersonName"
+                    android:singleLine="true"
                     tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,17 +51,42 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/student_number_label"
-                >
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:hint="@string/student_number_label">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/studentNumberET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
                     android:inputType="textPersonName"
+                    android:singleLine="true"
                     tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emirateTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:hint="@string/emirate_label">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/emirateSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    tools:ignore="MissingClass" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -66,15 +94,19 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
                 android:hint="@string/school_name_label">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/school_name_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -82,20 +114,23 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/educationalPathTIL"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/educational_path_label"
-               >
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:hint="@string/educational_path_label">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/educationalPathET"
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/educationalStreamSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:inputType="textPersonName"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    tools:ignore="MissingClass" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -103,15 +138,19 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
                 android:hint="@string/class_label">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                    android:id="@+id/class_spinner"
+                    android:id="@+id/classSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -121,16 +160,19 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/email_id_label"
-               >
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:hint="@string/email_id_label">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailIdET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
                     android:inputType="textEmailAddress"
+                    android:singleLine="true"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,35 +181,21 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/contact_number_label"
-               >
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:prefixText="+971"
+                android:hint="@string/contact_number_label">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/contactNumberET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
                     android:inputType="phone"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/identificationNumberTIL"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/identification_number_label"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/identificationNumberET"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:inputType="number"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -175,18 +203,21 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/date_of_birth_label"
-               >
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:hint="@string/date_of_birth_label">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/dobET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:inputType="datetime"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:inputType="datetime"
+                    android:singleLine="true"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -195,51 +226,143 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:errorTextAppearance="@style/error_appearance"
                 android:hint="@string/interests_label">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/intrestSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/emirateIdTIL"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/emirate_id_label"
-                >
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:text="@string/emirate_id_label"
+                tools:ignore="HardcodedText" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/emirateIdET"
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:inputType="number"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_margin="@dimen/_5sdp"
+                    app:errorTextAppearance="@style/error_appearance"
+                    android:layout_weight=".5">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emirateId1ET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:errorTextAppearance="@style/error_appearance"
+                    android:layout_weight=".5">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emirateId2ET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:errorTextAppearance="@style/error_appearance"
+                    android:layout_weight=".5">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emirateId3ET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:errorTextAppearance="@style/error_appearance"
+                    android:layout_weight=".5">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emirateId4ET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emirateErrorTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:text="@string/emirate_id_label"
+                android:textColor="#af001f"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="@dimen/_13sdp"
+                tools:ignore="HardcodedText" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/residentialAreaTIL"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:hint="@string/residential_area_label"
-                >
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:hint="@string/residential_area_label">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/residentialAreaET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
                     android:inputType="textPersonName"
                     tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -247,7 +370,11 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:errorTextAppearance="@style/error_appearance"
                 android:text="@string/student_grade_label"
                 tools:ignore="HardcodedText" />
 
@@ -256,7 +383,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:errorTextAppearance="@style/error_appearance"
                 android:layout_weight="1"
                 android:hint="@string/arabic_label">
 
@@ -264,8 +395,8 @@
                     android:id="@+id/arabicSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -275,7 +406,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:errorTextAppearance="@style/error_appearance"
                 android:layout_weight="1"
                 android:hint="@string/english_label">
 
@@ -283,8 +418,8 @@
                     android:id="@+id/englishSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -294,7 +429,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:errorTextAppearance="@style/error_appearance"
                 android:layout_weight="1"
                 android:hint="@string/maths_label">
 
@@ -302,8 +441,8 @@
                     android:id="@+id/mathsSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -314,7 +453,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
                 android:layout_weight="1"
                 android:hint="@string/chemistry_label">
 
@@ -322,8 +465,8 @@
                     android:id="@+id/chemistrySpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -333,7 +476,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:errorTextAppearance="@style/error_appearance"
                 android:layout_weight="1"
                 android:hint="@string/physics_label">
 
@@ -341,8 +488,8 @@
                     android:id="@+id/physicsSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -352,7 +499,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
                 android:layout_weight="1"
                 android:hint="@string/biology_label">
 
@@ -360,8 +511,8 @@
                     android:id="@+id/biologySpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusableInTouchMode="false"
                     android:focusable="false"
+                    android:focusableInTouchMode="false"
                     tools:ignore="MissingClass" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -371,7 +522,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
                 android:hint="@string/password_label"
                 app:endIconMode="password_toggle">
 
@@ -379,8 +534,8 @@
                     android:id="@+id/passwordET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:inputType="textWebPassword"/>
+                    android:inputType="textWebPassword"
+                    android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -388,7 +543,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
                 android:hint="@string/confirm_password_label"
                 app:endIconMode="password_toggle">
 
@@ -396,8 +555,8 @@
                     android:id="@+id/confirmPasswordET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:inputType="textWebPassword"/>
+                    android:inputType="textWebPassword"
+                    android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
 

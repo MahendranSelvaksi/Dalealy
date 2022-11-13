@@ -7,98 +7,31 @@ import android.text.InputFilter
 import android.util.Log
 import android.util.Patterns
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import com.emirate.youth.eya.R
 import com.emirate.youth.eya.adapters.SpinnerAdapter
 import com.emirate.youth.eya.dashboard.DashboardActivity
 import com.emirate.youth.eya.login.LoginActivity
 import com.emirate.youth.eya.utils.*
-import com.emirate.youth.eya.utils.model.SignupModel
 import com.emirate.youth.eya.utils.network.ApiInterface
 import com.emirate.youth.eya.utils.network.ServiceBuilder
-import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
-import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_signup.*
+import kotlinx.android.synthetic.main.activity_signup.passwordET
+import kotlinx.android.synthetic.main.activity_signup.passwordTIL
+import kotlinx.android.synthetic.main.common_toolbar.*
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.regex.Pattern
 import kotlin.collections.ArrayList
 
 
 class SignupActivity : BaseActivity() {
-
-    private val nameTIL: TextInputLayout by lazy { findViewById(R.id.nameTIL) }
-    private val nameET: TextInputEditText by lazy { findViewById(R.id.nameET) }
-
-    private val studentNumberTIL: TextInputLayout by lazy { findViewById(R.id.studentNumberTIL) }
-    private val studentNumberET: TextInputEditText by lazy { findViewById(R.id.studentNumberET) }
-
-    private val schoolNameTIL: TextInputLayout by lazy { findViewById(R.id.schoolNameTIL) }
-    private val school_name_spinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.school_name_spinner) }
-
-    private val educationalPathTIL: TextInputLayout by lazy { findViewById(R.id.educationalPathTIL) }
-    private val educationalPathET: TextInputEditText by lazy { findViewById(R.id.educationalPathET) }
-
-    private val classTIL: TextInputLayout by lazy { findViewById(R.id.classTIL) }
-    private val classSpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.class_spinner) }
-
-    private val emailIdTIL: TextInputLayout by lazy { findViewById(R.id.emailIdTIL) }
-    private val emailIdET: TextInputEditText by lazy { findViewById(R.id.emailIdET) }
-
-    private val contactNumberTIL: TextInputLayout by lazy { findViewById(R.id.contactNumberTIL) }
-    private val contactNumberET: TextInputEditText by lazy { findViewById(R.id.contactNumberET) }
-
-    private val identificationNumberTIL: TextInputLayout by lazy { findViewById(R.id.identificationNumberTIL) }
-    private val identificationNumberET: TextInputEditText by lazy { findViewById(R.id.identificationNumberET) }
-
-    private val dobTIL: TextInputLayout by lazy { findViewById(R.id.dobTIL) }
-    private val dobET: TextInputEditText by lazy { findViewById(R.id.dobET) }
-
-    private val intrestTIL: TextInputLayout by lazy { findViewById(R.id.intrestTIL) }
-    private val intrestSpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.intrestSpinner) }
-
-    private val emirateIdTIL: TextInputLayout by lazy { findViewById(R.id.emirateIdTIL) }
-    private val emirateIdET: TextInputEditText by lazy { findViewById(R.id.emirateIdET) }
-
-    private val residentialAreaTIL: TextInputLayout by lazy { findViewById(R.id.residentialAreaTIL) }
-    private val residentialAreaET: TextInputEditText by lazy { findViewById(R.id.residentialAreaET) }
-
-    private val passwordTIL: TextInputLayout by lazy { findViewById(R.id.passwordTIL) }
-    private val passwordET: TextInputEditText by lazy { findViewById(R.id.passwordET) }
-
-    private val confirmPasswordTIL: TextInputLayout by lazy { findViewById(R.id.confirmPasswordTIL) }
-    private val confirmPasswordET: TextInputEditText by lazy { findViewById(R.id.confirmPasswordET) }
-
-    private val arabicTIL: TextInputLayout by lazy { findViewById(R.id.arabicTIL) }
-    private val arabicSpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.arabicSpinner) }
-
-    private val englishTIL: TextInputLayout by lazy { findViewById(R.id.englishTIL) }
-    private val englishSpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.englishSpinner) }
-
-    private val mathsTIL: TextInputLayout by lazy { findViewById(R.id.mathsTIL) }
-    private val mathsSpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.mathsSpinner) }
-
-    private val chemistryTIL: TextInputLayout by lazy { findViewById(R.id.chemistryTIL) }
-    private val chemistrySpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.chemistrySpinner) }
-
-    private val physicsTIL: TextInputLayout by lazy { findViewById(R.id.physicsTIL) }
-    private val physicsSpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.physicsSpinner) }
-
-    private val biologyTIL: TextInputLayout by lazy { findViewById(R.id.biologyTIL) }
-    private val biologySpinner: MaterialAutoCompleteTextView by lazy { findViewById(R.id.biologySpinner) }
-
-    private val btn_signup: Button by lazy { findViewById(R.id.btn_signup) }
-    private val commonTitle: TextView by lazy { findViewById(R.id.commonTitle) }
-    private val backButton: ImageView by lazy { findViewById(R.id.backButton) }
 
     val smileyRemover = SmileyRemover()
     val schoolNameArray = ArrayList<String>()
@@ -111,15 +44,19 @@ class SignupActivity : BaseActivity() {
             getSupportActionBar()!!.hide();
         }
 
-        //  val schoolNameArray = resources.getStringArray(R.array.school_name_array).toList()
         val interestArray = resources.getStringArray(R.array.intrest_array).toList()
         val gradeArray = resources.getStringArray(R.array.grade_array).toList()
         val classArray = resources.getStringArray(R.array.class_array).toList()
+        val educationalStreamArray =
+            resources.getStringArray(R.array.educational_stream_array).toList()
+        val emirateArray = resources.getStringArray(R.array.emirate_array).toList()
 
 
         val interestAdapter = SpinnerAdapter(this, interestArray)
         val gradeAdapter = SpinnerAdapter(this, gradeArray)
         val classAdapter = SpinnerAdapter(this, classArray)
+        val emirateAdapter = SpinnerAdapter(this, emirateArray)
+        val educationalStreamAdapter = SpinnerAdapter(this, educationalStreamArray)
 
         commonTitle.text = resources.getString(R.string.Signup)
 
@@ -133,7 +70,7 @@ class SignupActivity : BaseActivity() {
         }
 
         backButton.setOnClickListener {
-           onBackPressed()
+            onBackPressed()
         }
 
         intrestSpinner.setAdapter(interestAdapter)
@@ -145,21 +82,22 @@ class SignupActivity : BaseActivity() {
         physicsSpinner.setAdapter(gradeAdapter)
         biologySpinner.setAdapter(gradeAdapter)
         classSpinner.setAdapter(classAdapter)
-
-        fetchSchool()
+        emirateSpinner.setAdapter(emirateAdapter)
+        educationalStreamSpinner.setAdapter(educationalStreamAdapter)
 
         nameET.filters = arrayOf<InputFilter>(smileyRemover)
         studentNumberET.filters = arrayOf<InputFilter>(smileyRemover)
-        educationalPathET.filters = arrayOf<InputFilter>(smileyRemover)
+        educationalStreamSpinner.filters = arrayOf<InputFilter>(smileyRemover)
         emailIdET.filters = arrayOf<InputFilter>(smileyRemover)
         contactNumberET.filters = arrayOf<InputFilter>(smileyRemover)
-        identificationNumberET.filters = arrayOf<InputFilter>(smileyRemover)
-        emirateIdET.filters = arrayOf<InputFilter>(smileyRemover)
         residentialAreaET.filters = arrayOf<InputFilter>(smileyRemover)
         passwordET.filters = arrayOf<InputFilter>(smileyRemover)
         confirmPasswordET.filters = arrayOf<InputFilter>(smileyRemover)
-        emirateIdET.filters += InputFilter.LengthFilter(15)
-        contactNumberET.filters += InputFilter.LengthFilter(10)
+        emirateId1ET.filters += InputFilter.LengthFilter(3)
+        emirateId2ET.filters += InputFilter.LengthFilter(4)
+        emirateId3ET.filters += InputFilter.LengthFilter(5)
+        emirateId4ET.filters += InputFilter.LengthFilter(3)
+        contactNumberET.filters += InputFilter.LengthFilter(9)
 
         val cal = Calendar.getInstance()
 
@@ -185,6 +123,38 @@ class SignupActivity : BaseActivity() {
             datePicker.show()
         }
 
+        emirateId1ET.doAfterTextChanged {
+            if (it.toString().trim().isEmpty() && it.toString().trim().length == 3) {
+                emirateId1ET.imeOptions = EditorInfo.IME_ACTION_NEXT
+                emirateIdValidation()
+            } else {
+                emirateIdValidation()
+            }
+        }
+        emirateId2ET.doAfterTextChanged {
+            if (it.toString().trim().isEmpty() && it.toString().trim().length == 4) {
+                emirateId2ET.imeOptions = EditorInfo.IME_ACTION_NEXT
+                emirateIdValidation()
+            } else {
+                emirateIdValidation()
+            }
+        }
+        emirateId3ET.doAfterTextChanged {
+            if (it.toString().trim().isEmpty() && it.toString().trim().length == 5) {
+                emirateId3ET.imeOptions = EditorInfo.IME_ACTION_NEXT
+                emirateIdValidation()
+            } else {
+                emirateIdValidation()
+            }
+        }
+        emirateId4ET.doAfterTextChanged {
+            if (it.toString().trim().isEmpty() && it.toString().trim().length == 3) {
+                emirateId4ET.imeOptions = EditorInfo.IME_ACTION_DONE
+                emirateIdValidation()
+            } else {
+                emirateIdValidation()
+            }
+        }
 
         nameET.doAfterTextChanged {
             if (it.toString().trim().isNotEmpty())
@@ -196,7 +166,7 @@ class SignupActivity : BaseActivity() {
                 studentNumberTIL.error = null
         }
 
-        educationalPathET.doAfterTextChanged {
+        educationalStreamSpinner.doAfterTextChanged {
             if (it.toString().trim().isNotEmpty())
                 educationalPathTIL.error = null
         }
@@ -211,21 +181,9 @@ class SignupActivity : BaseActivity() {
                 contactNumberTIL.error = null
         }
 
-        identificationNumberET.doAfterTextChanged {
-            if (it.toString().trim().isNotEmpty())
-                identificationNumberTIL.error = null
-        }
-
         dobET.doAfterTextChanged {
             if (it.toString().trim().isNotEmpty())
                 dobTIL.error = null
-        }
-
-        emirateIdET.doAfterTextChanged {
-            if (it.toString().trim().isNotEmpty() || it.toString().trim().length >= 15)
-                emirateIdTIL.error = null
-            else if (it.toString().trim().length < 15)
-                emirateIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
         }
 
         residentialAreaET.doAfterTextChanged {
@@ -241,6 +199,13 @@ class SignupActivity : BaseActivity() {
         confirmPasswordET.doAfterTextChanged {
             if (it.toString().trim().isNotEmpty())
                 confirmPasswordTIL.error = null
+        }
+
+        emirateSpinner.setOnItemClickListener { adapterView, view, i, l ->
+            if (adapterView.getItemAtPosition(i).toString().trim().isNotEmpty()) {
+                emirateTIL.error = null
+                fetchSchool(adapterView.getItemAtPosition(i).toString().trim())
+            }
         }
 
         school_name_spinner.setOnItemClickListener { adapterView, view, i, l ->
@@ -298,30 +263,42 @@ class SignupActivity : BaseActivity() {
         }
 
         btn_signup.setOnClickListener {
+            Log.w("Succes",
+                "contactNumberET.text.toString().trim()  :::: " + contactNumberET.text.toString()
+                    .trim()
+            )
+            Log.w("Succes",
+                "contactNumberET.text.toString().trim()  :::: " + contactNumberTIL.prefixText.toString()
+                    .trim()
+            )
             if (isValidInput()) {
                 if (NetworkHelper.isOnline(applicationContext)) {
                     showProgress(resources.getString(R.string.signup_progress))
                     val request = ServiceBuilder.buildService(ApiInterface::class.java)
                     val call = request.register(
-                        nameET.text.toString().trim(),
-                        studentNumberET.text.toString().trim(),
-                        school_name_spinner.text.toString().trim(),
-                        educationalPathET.text.toString().trim(),
-                        classSpinner.text.toString().trim(),
-                        contactNumberET.text.toString().trim(),
-                        identificationNumberET.text.toString().trim(),
-                        dobET.text.toString().trim(),
-                        emailIdET.text.toString().trim(),
-                        intrestSpinner.text.toString().trim(),
-                        emirateIdET.text.toString().trim(),
-                        residentialAreaET.text.toString().trim(),
-                        passwordET.text.toString().trim(),
-                        arabicSpinner.text.toString().trim(),
-                        englishSpinner.text.toString().trim(),
-                        mathsSpinner.text.toString().trim(),
-                        chemistrySpinner.text.toString().trim(),
-                        physicsSpinner.text.toString().trim(),
-                        biologySpinner.text.toString().trim()
+                        name = nameET.text.toString().trim(),
+                        student_no = studentNumberET.text.toString().trim(),
+                        schName = school_name_spinner.text.toString().trim(),
+                        edupath = educationalStreamSpinner.text.toString().trim(),
+                        class1 = classSpinner.text.toString().trim(),
+                        email_id = emailIdET.text.toString().trim(),
+                        contact_no = contactNumberTIL.prefixText.toString()
+                            .trim() + contactNumberET.text.toString().trim(), identifier_no = "123",
+                        dob = dobET.text.toString().trim(),
+                        interest = intrestSpinner.text.toString().trim(),
+                        emirates_id = (emirateId1ET.text.toString()
+                            .trim() + "-" + emirateId2ET.text.toString()
+                            .trim() + "-" + emirateId3ET.text.toString()
+                            .trim() + "-" + emirateId4ET.text.toString().trim()),
+                        resident_no = residentialAreaET.text.toString().trim(),
+                        password = passwordET.text.toString().trim(),
+                        arabic = arabicSpinner.text.toString().trim(),
+                        english = englishSpinner.text.toString().trim(),
+                        maths = mathsSpinner.text.toString().trim(),
+                        chemistry = chemistrySpinner.text.toString().trim(),
+                        physics = physicsSpinner.text.toString().trim(),
+                        biology = biologySpinner.text.toString().trim(),
+                        emirate = emirateSpinner.text.toString().trim()
                     )
                     call.enqueue(object : retrofit2.Callback<ResponseBody> {
                         override fun onResponse(
@@ -344,11 +321,20 @@ class SignupActivity : BaseActivity() {
                                         applicationContext,
                                         AppConstant.LOGIN_SESSION_NAME,
                                         AppConstant.LOGIN_SESSION_USER_ID,
-                                        emirateIdET.text.toString().trim()
+                                        (emirateId1ET.text.toString()
+                                            .trim() + "-" + emirateId2ET.text.toString()
+                                            .trim() + "-" + emirateId3ET.text.toString()
+                                            .trim() + "-" + emirateId4ET.text.toString().trim())
                                     )
                                     callRegisterActivity()
                                 } else {
-                                    showFailureDataDialog()
+                                    Toast.makeText(this@SignupActivity,json.getString("msg"),Toast.LENGTH_LONG).show()
+                                    if (json.getString("msg") == "Emirates id is already there"){
+                                        emirateErrorTV.text=resources.getString(R.string.fill_valid_emirate_id)
+                                        emirateErrorTV.visibility=View.VISIBLE
+                                        emirateId1ET.requestFocus()
+                                    }
+                                    //showFailureDataDialog()
                                 }
                             }
                         }
@@ -359,7 +345,7 @@ class SignupActivity : BaseActivity() {
                         }
                     })
                     //finish()
-                }else{
+                } else {
                     showNoNetworkDialog()
                 }
             }
@@ -376,15 +362,20 @@ class SignupActivity : BaseActivity() {
 
     fun isValidInput(): Boolean {
         if (nameET.text.toString().trim().isEmpty() && studentNumberET.text.toString().trim()
-                .isEmpty() && school_name_spinner.text.toString().trim().isEmpty() &&
-            educationalPathET.text.toString().trim().isEmpty() && classSpinner.text.toString()
+                .isEmpty() && emirateSpinner.text.toString().trim().isEmpty() &&
+            school_name_spinner.text.toString().trim().isEmpty() &&
+            educationalStreamSpinner.text.toString().trim()
+                .isEmpty() && classSpinner.text.toString()
                 .trim()
                 .isEmpty() && emailIdET.text.toString().trim().isEmpty() &&
             contactNumberET.text.toString().trim()
-                .isEmpty() && identificationNumberET.text.toString().trim()
                 .isEmpty() && dobET.text.toString().trim().isEmpty() &&
-            intrestSpinner.text.toString().trim().isEmpty() && emirateIdET.text.toString().trim()
-                .isEmpty() && residentialAreaET.text.toString().trim().isEmpty() &&
+            intrestSpinner.text.toString().trim().isEmpty() && emirateId1ET.text.toString().trim()
+                .isEmpty() &&
+            emirateId2ET.text.toString().trim().isEmpty() &&
+            emirateId3ET.text.toString().trim().isEmpty() && emirateId4ET.text.toString().trim()
+                .isEmpty()
+            && residentialAreaET.text.toString().trim().isEmpty() &&
             passwordET.text.toString().trim().isEmpty() && confirmPasswordET.text.toString().trim()
                 .isEmpty() && arabicSpinner.text.toString().trim().isEmpty() &&
             englishSpinner.text.toString().trim().isEmpty() && mathsSpinner.text.toString().trim()
@@ -394,15 +385,16 @@ class SignupActivity : BaseActivity() {
         ) {
             nameTIL.error = resources.getString(R.string.fill_name)
             studentNumberTIL.error = resources.getString(R.string.fill_student_number)
+            emirateTIL.error = resources.getString(R.string.fill_emirate)
             schoolNameTIL.error = resources.getString(R.string.fill_schl_name)
             educationalPathTIL.error = resources.getString(R.string.fill_edu_path)
             classTIL.error = resources.getString(R.string.select_class)
             emailIdTIL.error = resources.getString(R.string.fill_email_id)
             contactNumberTIL.error = resources.getString(R.string.fill_contact_num)
-            identificationNumberTIL.error = resources.getString(R.string.fill_identifiction_num)
             dobTIL.error = resources.getString(R.string.fill_dob)
             intrestTIL.error = resources.getString(R.string.fill_interest)
-            emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
+            emirateErrorTV.text = resources.getString(R.string.fill_emirate_id)
+            emirateErrorTV.visibility = View.VISIBLE
             residentialAreaTIL.error = resources.getString(R.string.fill_residential_area)
             passwordTIL.error = resources.getString(R.string.fill_password)
             confirmPasswordTIL.error = resources.getString(R.string.fill_confirm_password)
@@ -413,16 +405,21 @@ class SignupActivity : BaseActivity() {
             physicsTIL.error = resources.getString(R.string.select_physics)
             biologyTIL.error = resources.getString(R.string.select_biology)
             return false
-        } else if (nameET.text.toString().trim().isEmpty() || studentNumberET.text.toString().trim()
-                .isEmpty() || school_name_spinner.text.toString().trim().isEmpty() ||
-            educationalPathET.text.toString().trim().isEmpty() || classSpinner.text.toString()
-                .trim()
-                .isEmpty() || emailIdET.text.toString().trim().isEmpty() ||
-            contactNumberET.text.toString().trim()
-                .isEmpty() || identificationNumberET.text.toString().trim()
-                .isEmpty() || dobET.text.toString().trim().isEmpty() ||
-            intrestSpinner.text.toString().trim().isEmpty() || emirateIdET.text.toString().trim()
-                .isEmpty() || residentialAreaET.text.toString().trim().isEmpty() ||
+        } else if (nameET.text.toString().trim().isEmpty() || emirateSpinner.text.toString().trim()
+                .isEmpty() ||
+            studentNumberET.text.toString().trim().isEmpty() || school_name_spinner.text.toString()
+                .trim().isEmpty() ||
+            educationalStreamSpinner.text.toString().trim()
+                .isEmpty() || classSpinner.text.toString()
+                .trim().isEmpty() || emailIdET.text.toString().trim().isEmpty() ||
+            contactNumberET.text.toString().trim().isEmpty() || dobET.text.toString().trim()
+                .isEmpty() ||
+            intrestSpinner.text.toString().trim().isEmpty() || emirateId1ET.text.toString().trim()
+                .isEmpty() ||
+            emirateId2ET.text.toString().trim().isEmpty() ||
+            emirateId3ET.text.toString().trim().isEmpty() || emirateId4ET.text.toString().trim()
+                .isEmpty() ||
+            residentialAreaET.text.toString().trim().isEmpty() ||
             passwordET.text.toString().trim().isEmpty() || confirmPasswordET.text.toString().trim()
                 .isEmpty() || arabicSpinner.text.toString().trim().isEmpty() ||
             englishSpinner.text.toString().trim().isEmpty() || mathsSpinner.text.toString().trim()
@@ -437,10 +434,13 @@ class SignupActivity : BaseActivity() {
             if (studentNumberET.text.toString().trim().isEmpty()) {
                 studentNumberTIL.error = resources.getString(R.string.fill_student_number)
             }
+            if (emirateSpinner.text.toString().trim().isEmpty()) {
+                emirateTIL.error = resources.getString(R.string.fill_emirate)
+            }
             if (school_name_spinner.text.toString().trim().isEmpty()) {
                 schoolNameTIL.error = resources.getString(R.string.fill_schl_name)
             }
-            if (educationalPathET.text.toString().trim().isEmpty()) {
+            if (educationalStreamSpinner.text.toString().trim().isEmpty()) {
                 educationalPathTIL.error = resources.getString(R.string.fill_edu_path)
             }
             if (classSpinner.text.toString().trim().isEmpty()) {
@@ -452,17 +452,19 @@ class SignupActivity : BaseActivity() {
             if (contactNumberET.text.toString().trim().isEmpty()) {
                 contactNumberTIL.error = resources.getString(R.string.fill_contact_num)
             }
-            if (identificationNumberET.text.toString().trim().isEmpty()) {
-                identificationNumberTIL.error = resources.getString(R.string.fill_identifiction_num)
-            }
             if (dobET.text.toString().trim().isEmpty()) {
                 dobTIL.error = resources.getString(R.string.fill_dob)
             }
             if (intrestSpinner.text.toString().trim().isEmpty()) {
                 intrestTIL.error = resources.getString(R.string.fill_interest)
             }
-            if (emirateIdET.text.toString().trim().isEmpty()) {
-                emirateIdTIL.error = resources.getString(R.string.fill_emirate_id)
+            if (emirateId1ET.text.toString().trim().isEmpty() || emirateId2ET.text.toString().trim()
+                    .isEmpty() ||
+                emirateId3ET.text.toString().trim().isEmpty() || emirateId4ET.text.toString().trim()
+                    .isEmpty()
+            ) {
+                emirateErrorTV.text = resources.getString(R.string.fill_emirate_id)
+                emirateErrorTV.visibility = View.VISIBLE
             }
             if (residentialAreaET.text.toString().trim().isEmpty()) {
                 residentialAreaTIL.error = resources.getString(R.string.fill_residential_area)
@@ -493,8 +495,13 @@ class SignupActivity : BaseActivity() {
             }
             return false
         } else {
-            if (emirateIdET.text.toString().trim().length < 15) {
-                emirateIdTIL.error = resources.getString(R.string.fill_valid_emirate_id)
+            if (emirateId1ET.text.toString().trim().length < 3 || emirateId2ET.text.toString()
+                    .trim().length < 4 ||
+                emirateId3ET.text.toString().trim().length < 5 || emirateId4ET.text.toString()
+                    .trim().length < 3
+            ) {
+                emirateErrorTV.text = resources.getString(R.string.fill_valid_emirate_id)
+                emirateErrorTV.visibility = View.VISIBLE
                 return false
             } else if (confirmPasswordET.text.toString().trim() != passwordET.text.toString()
                     .trim()
@@ -517,7 +524,8 @@ class SignupActivity : BaseActivity() {
         finish()
     }
 
-    private fun fetchSchool() {
+    private fun fetchSchool(selectedSchool: String) {
+        Log.w("Success", "selectedSchool :::: " + selectedSchool)
         if (NetworkHelper.isOnline(applicationContext)) {
             showProgress(resources.getString(R.string.school_progress))
             val request = ServiceBuilder.buildService(ApiInterface::class.java)
@@ -534,19 +542,22 @@ class SignupActivity : BaseActivity() {
                         val json = JSONObject(str_response)
                         Log.w("Success", "json_contact :::: " + json.toString())
                         if (json.getBoolean("status")) {
+                            schoolNameArray.clear()
                             val jsonArray = json.getJSONArray("data")
                             Log.w("Success", "jsonArray length ::: " + jsonArray.length())
                             for (i in 0 until jsonArray.length()) {
                                 val jsonObject = jsonArray.getJSONObject(i)
-                                if (selectedLang == AppConstant.LANGUAGE_ARABIC) {
-                                    schoolNameArray.add(jsonObject.getString("name_ar"))
-                                } else {
-                                    schoolNameArray.add(jsonObject.getString("name"))
-                                }
+                                if (jsonObject.getString("emirate") == selectedSchool.trim()) {
+                                    if (selectedLang == AppConstant.LANGUAGE_ARABIC) {
+                                        schoolNameArray.add(jsonObject.getString("name_ar"))
+                                    } else {
+                                        schoolNameArray.add(jsonObject.getString("name"))
+                                    }
 
-                                val schoolAdapter =
-                                    SpinnerAdapter(applicationContext, schoolNameArray.toList())
-                                school_name_spinner.setAdapter(schoolAdapter)
+                                    val schoolAdapter =
+                                        SpinnerAdapter(applicationContext, schoolNameArray.toList())
+                                    school_name_spinner.setAdapter(schoolAdapter)
+                                }
                             }
                         } else {
                             val schoolNameArray =
@@ -568,5 +579,18 @@ class SignupActivity : BaseActivity() {
             school_name_spinner.setAdapter(schoolAdapter)
         }
 
+    }
+
+    private fun emirateIdValidation() {
+        if (emirateId1ET.text.toString().trim().length < 3 || emirateId2ET.text.toString()
+                .trim().length < 4 ||
+            emirateId3ET.text.toString().trim().length < 5 || emirateId4ET.text.toString()
+                .trim().length < 3
+        ) {
+            emirateErrorTV.text = resources.getString(R.string.fill_valid_emirate_id)
+            emirateErrorTV.visibility = View.VISIBLE
+        } else {
+            emirateErrorTV.visibility = View.GONE
+        }
     }
 }

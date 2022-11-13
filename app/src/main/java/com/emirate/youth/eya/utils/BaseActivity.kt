@@ -196,4 +196,6 @@ abstract class BaseActivity : AppCompatActivity() {
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
+
+
 }

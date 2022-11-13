@@ -49,7 +49,7 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
             findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.logout)
         val language =
             findViewById<androidx.appcompat.widget.AppCompatImageView>(R.id.language)
-        commonTitle.text=resources.getString(R.string.questions_title)
+        commonTitle.text = resources.getString(R.string.questions_title)
 
 
         val mRecyclerView = findViewById<RecyclerView>(R.id.mRecyclerView)
@@ -72,27 +72,35 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
         fetchQuestions()
 
         btn_submit.setOnClickListener {
-           // if (isAllQuestionAnswered()) {
-                showMarksDialog(calculateTheMarks().toString())
-            /*} else {
+            if (isAllQuestionAnswered()) {
+                if (calculateTheMarks() > 60) {
+                    showMarksDialog(calculateTheMarks().toString())
+                } else {
+                    Toast.makeText(this, R.string.upto_mark_msg, Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, Question2Activity::class.java)
+                    intent.putExtra("cat1Score", calculateTheMarks().toString())
+                    this.startActivity(intent)
+                    finish()
+                }
+            } else {
                 Toast.makeText(this, R.string.fill_all_questions, Toast.LENGTH_LONG).show()
-            }*/
+            }
         }
     }
 
     private fun showMarksDialog(mark: String) {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.success)
-        val value = String.format("%s ",resources.getString(R.string.leader_name_cat_1))
+        val value = String.format("%s ", resources.getString(R.string.leader_name_cat_1))
 
         builder.setMessage(value)
         builder.setPositiveButton(
             R.string.ok
         ) { dialog, which ->
-                val intent = Intent(this, Question2Activity::class.java)
-                intent.putExtra("cat1Score", mark)
-                this.startActivity(intent)
-                finish()
+            val intent = Intent(this, Question2Activity::class.java)
+            intent.putExtra("cat1Score", mark)
+            this.startActivity(intent)
+            finish()
         }
 
         val dialog: AlertDialog = builder.create()
@@ -129,56 +137,57 @@ class QuestionActivity : BaseActivity(), SpinnerListener {
 
     private fun fetchQuestions() {
         if (NetworkHelper.isOnline(applicationContext)) {
-        showProgress(resources.getString(R.string.question_data_load_msg))
-        val request = ServiceBuilder.buildService(ApiInterface::class.java)
-        val call = request.FetchQuestionnaire()
-        call.enqueue(object : retrofit2.Callback<ResponseBody> {
-            override fun onResponse(
-                call: Call<ResponseBody>,
-                response: Response<ResponseBody>
-            ) {
-                hideProgress()
-                if (response.isSuccessful) {
-                    var str_response = response.body()!!.string()
-                    //creating json object
-                    val json = JSONObject(str_response)
-                    Log.w("Success", "json_contact :::: " + json.toString())
-                    if (json.getBoolean("status")) {
-                        val jsonArray = json.getJSONArray("data")
-                        Log.w("Success", "jsonArray length ::: " + jsonArray.length())
-                        for (i in 0 until jsonArray.length()) {
-                            val jsonObject = jsonArray.getJSONObject(i)
-                            val questionModel = QuestionModel()
-                            if (jsonObject.getString("ques_cat") == "1") {
-                                questionModel.ques_no = jsonObject.getString("ques_no")
-                                questionModel.ques = jsonObject.getString("ques")
-                                questionModel.ques_ar = jsonObject.getString("ques_ar")
-                                questionModel.ques_cat = jsonObject.getString("ques_cat")
-                                questionModel.ques_desc = jsonObject.getString("ques_desc")
-                                questionModel.ques_desc_ar = jsonObject.getString("ques_desc_ar")
-                                questionModel.ques_ex = jsonObject.getString("ques_ex")
-                                questionModel.ques_ex_ar = jsonObject.getString("ques_ex_ar")
-                                questionModel.ques_type = jsonObject.getString("ques_type")
-                                questionModel.ques_value = jsonObject.getString("ques_value")
-                                Log.w("Success", "questionModel :::: " + questionModel.ques)
-                                questionList.add(questionModel)
+            showProgress(resources.getString(R.string.question_data_load_msg))
+            val request = ServiceBuilder.buildService(ApiInterface::class.java)
+            val call = request.FetchQuestionnaire()
+            call.enqueue(object : retrofit2.Callback<ResponseBody> {
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+                    hideProgress()
+                    if (response.isSuccessful) {
+                        var str_response = response.body()!!.string()
+                        //creating json object
+                        val json = JSONObject(str_response)
+                        Log.w("Success", "json_contact :::: " + json.toString())
+                        if (json.getBoolean("status")) {
+                            val jsonArray = json.getJSONArray("data")
+                            Log.w("Success", "jsonArray length ::: " + jsonArray.length())
+                            for (i in 0 until jsonArray.length()) {
+                                val jsonObject = jsonArray.getJSONObject(i)
+                                val questionModel = QuestionModel()
+                                if (jsonObject.getString("ques_cat") == "1") {
+                                    questionModel.ques_no = jsonObject.getString("ques_no")
+                                    questionModel.ques = jsonObject.getString("ques")
+                                    questionModel.ques_ar = jsonObject.getString("ques_ar")
+                                    questionModel.ques_cat = jsonObject.getString("ques_cat")
+                                    questionModel.ques_desc = jsonObject.getString("ques_desc")
+                                    questionModel.ques_desc_ar =
+                                        jsonObject.getString("ques_desc_ar")
+                                    questionModel.ques_ex = jsonObject.getString("ques_ex")
+                                    questionModel.ques_ex_ar = jsonObject.getString("ques_ex_ar")
+                                    questionModel.ques_type = jsonObject.getString("ques_type")
+                                    questionModel.ques_value = jsonObject.getString("ques_value")
+                                    Log.w("Success", "questionModel :::: " + questionModel.ques)
+                                    questionList.add(questionModel)
+                                }
                             }
-                        }
-                        Log.w("Success", "questionList ::: " + questionList.size)
-                        mQuestionAdapter.setItems(questionList)
-                        mQuestionAdapter.updateLanguage(selectedLang)
-                    } else {
+                            Log.w("Success", "questionList ::: " + questionList.size)
+                            mQuestionAdapter.setItems(questionList)
+                            mQuestionAdapter.updateLanguage(selectedLang)
+                        } else {
 
+                        }
                     }
                 }
-            }
 
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                Log.e("error", t.localizedMessage)
-                hideProgress()
-            }
-        })
-        }else{
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Log.e("error", t.localizedMessage)
+                    hideProgress()
+                }
+            })
+        } else {
             showNoNetworkDialog()
         }
     }

@@ -16,9 +16,10 @@
     <string name="name_label">الاسم</string>
     <string name="student_number_label">رقم الطالب في النظام</string>
     <string name="school_name_label">اسم المدرسة</string>
+    <string name="emirate_label">الإمارة</string>
     <string name="educational_path_label">المسار التعليمي</string>
     <string name="class_label">الصف</string>
-    <string name="email_id_label">رقم التواصل</string>
+    <string name="email_id_label">عنوان البريد الالكترونى</string>
     <string name="contact_number_label">رقم التواصل</string>
     <string name="identification_number_label">رقم الهوية</string>
     <string name="date_of_birth_label">تاريخ الميلاد</string>
@@ -56,14 +57,14 @@
     </string-array>
 
     <string-array name="grade_array">
-        <item>أ</item>
-        <item>أ +</item>
-        <item>ب</item>
-        <item>ب +</item>
-        <item>ج</item>
-        <item>ج +</item>
-        <item>د</item>
-        <item>د +</item>
+        <item>A</item>
+        <item>A+</item>
+        <item>B</item>
+        <item>B+</item>
+        <item>C</item>
+        <item>C+</item>
+        <item>D</item>
+        <item>D+</item>
         <item>F</item>
     </string-array>
 
@@ -86,12 +87,34 @@
         <item>12</item>
     </string-array>
 
+    <string-array name="educational_stream_array">
+        <item>متقدم</item>
+        <item>النخبة</item>
+        <item>العام</item>
+        <item>التطبيقي</item>
+        <item>الاكاديمي</item>
+    </string-array>
+
+
+    <string-array name="emirate_array">
+        <item>أبوظبي</item>
+        <item>العين</item>
+        <item>الظفرة</item>
+        <item>دبي</item>
+        <item>الشارقة</item>
+        <item>عجمان</item>
+        <item>أم القيوين</item>
+        <item>رأس الخيمة</item>
+        <item>الفحيرة</item>
+    </string-array>
+
     <string name="fill_name">الرجاء تعبئة الاسم</string>
     <string name="fill_student_number">الرجاء تعبئة رقم الطالب</string>
+    <string name="fill_emirate">الرجاء تحديد الإمارة</string>
     <string name="fill_schl_name">الرجاء تحديد اسم المدرسة</string>
     <string name="fill_edu_path">الرجاء تعبئة المسار التعليمي</string>
     <string name="select_class">الرجاء تحديد فئة</string>
-    <string name="fill_email_id">يرجى ملء معرف البريد الإلكتروني</string>
+    <string name="fill_email_id">يرجى ملء عنوان البريد الإلكتروني</string>
     <string name="fill_contact_num">يرجى ملء رقم الاتصال</string>
     <string name="fill_identifiction_num">الرجاء تعبئة رقم التعريف</string>
     <string name="fill_dob">يرجى ملء تاريخ الميلاد</string>
@@ -106,7 +129,7 @@
     <string name="fill_confirm_password">يرجى ملء تأكيد كلمة المرور</string>
     <string name="fill_valid_confirm_password">الرجاء إدخال نفس كلمة المرور</string>
 
-    <string name="valid_email_id">يرجى ملء معرف بريد إلكتروني صالح</string>
+    <string name="valid_email_id">يرجى ملء عنوان بريد إلكتروني صالح</string>
 
     <string name="signup_progress">تقدم التسجيل ، يرجى الانتظار …</string>
     <string name="school_progress">جاري تحميل بيانات المدرسة ، يرجى الانتظار …</string>
@@ -117,7 +140,7 @@
 
     <string name="no_data">لا تتوافر بيانات</string>
 
-
+    <string name="not_elgible_leader_msg">أنت لست مؤهلا لقائد.</string>
     <!--    Common strings-->
 
     <string name="Yes">نعم</string>
@@ -186,29 +209,28 @@
     <string name="future_jobs_key_title">مجال وظائف المستقبل</string>
 
 
-
     <string-array name="university_link_aaray">
         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
         <item>https://www.ajman.ac.ae/ar</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
         <item>https://www.ajman.ac.ae/ar</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
         <item>https://www.ajman.ac.ae/ar</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
-         <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
+        <item>https://www.caa.ae/Pages/Programs/All.aspx</item>
 
     </string-array>
 
@@ -356,7 +378,7 @@
     </string-array>
 
     <string-array name="future_jobs_for_cat_2">
-       <item> •محققون في مجال البيانات</item>
+        <item> •محققون في مجال البيانات</item>
         <item>موظفو مركز قيادة الطائرات بدون طيار.</item>
         <item> •مهندسو النظم الطائرة.</item>
         <item> •الطاقم الأرضي للتاكسي الطائر )بدون طيار(.</item>

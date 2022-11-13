@@ -12,7 +12,7 @@ interface ApiInterface {
     fun login(@Query("emirateId")emirateId:String,@Query("password")password:String): Call<ResponseBody>
 
     @GET("register")
-    fun register(@Query("name")emirateId:String,@Query("student_no")student_no:String,@Query("schName")schName:String,
+    fun register(@Query("name")name:String,@Query("student_no")student_no:String,@Query("schName")schName:String,
                  @Query("edupath")edupath:String,@Query("class")class1:String,
                  @Query("email_id")email_id:String,@Query("contact_no")contact_no:String,
                  @Query("identifier_no")identifier_no:String,@Query("dob")dob:String,
@@ -20,7 +20,7 @@ interface ApiInterface {
                  @Query("resident_no")resident_no:String,@Query("password")password:String,
                  @Query("arabic")arabic:String,@Query("english")english:String,
                  @Query("maths")maths:String,@Query("chemistry")chemistry:String,
-                 @Query("physics")physics:String,@Query("biology")biology:String): Call<ResponseBody>
+                 @Query("physics")physics:String,@Query("biology")biology:String,@Query("emirate")emirate:String): Call<ResponseBody>
 
     @GET("FetchQuestionnaire")
     fun FetchQuestionnaire(): Call<ResponseBody>

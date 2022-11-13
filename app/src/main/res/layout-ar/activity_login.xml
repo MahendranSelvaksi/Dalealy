@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,13 +14,15 @@
         android:gravity="center"
         android:orientation="vertical"
         android:weightSum="10">
+
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:src="@mipmap/ic_launcher_new" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!--<com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emirateIdTIL"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -35,10 +36,112 @@
                 android:id="@+id/emirateIdET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:gravity="end"
                 android:singleLine="true" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:text="@string/emirate_id_label"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_weight=".5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emirateId1ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_weight=".5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emirateId2ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_weight=".5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emirateId3ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                app:errorTextAppearance="@style/error_appearance"
+                android:layout_weight=".5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emirateId4ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emirateErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:text="@string/emirate_id_label"
+            android:textColor="#af001f"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="@dimen/_13sdp"
+            tools:ignore="HardcodedText" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordTIL"
@@ -54,9 +157,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:layout_gravity="start"
-                android:gravity="end"
-                android:inputType="textWebPassword" />
+                android:inputType="textPassword" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -68,7 +170,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginBottom="5dp"
             android:padding="15dp"
-            android:text="@string/login_label" />
+            android:text="@string/login_label"/>
 
         <TextView
             android:id="@+id/txt_signup"
@@ -76,7 +178,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/new_user_label"
-
             android:textSize="18sp" />
 
 

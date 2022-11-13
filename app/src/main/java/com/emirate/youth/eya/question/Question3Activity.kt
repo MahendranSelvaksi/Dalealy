@@ -70,7 +70,17 @@ class Question3Activity : BaseActivity(), SpinnerListener {
 
         btn_submit.setOnClickListener {
             if (isAllQuestionAnswered()) {
-                showMarksDialog(calculateTheMarks().toString())
+                if (calculateTheMarks() > 60) {
+                    showMarksDialog(calculateTheMarks().toString())
+                } else {
+                    Toast.makeText(this, R.string.upto_mark_msg, Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, Question4Activity::class.java)
+                    intent.putExtra("cat1Score", cat1Score)
+                    intent.putExtra("cat2Score", cat2Score)
+                    intent.putExtra("cat3Score", calculateTheMarks().toString())
+                    this.startActivity(intent)
+                    finish()
+                }
             } else {
                 Toast.makeText(this, R.string.fill_all_questions, Toast.LENGTH_LONG).show()
             }

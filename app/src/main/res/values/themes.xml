@@ -62,4 +62,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#F44336</item>
+    </style>
+
+
 </resources>
